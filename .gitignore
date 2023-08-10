@@ -4,7 +4,6 @@
 .config/fish/fish_variables
 .config/fish/functions/fzf_key_bindings.fish
 .config/karabiner/
-.config/clash/config.yaml
 .DS_Store
 .ipython/
 .jupyter/

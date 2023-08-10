@@ -3,6 +3,10 @@
 This is the home of all my dotfiles. 
 Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
 
+## TODO
+- From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)
+- Add [nnn](https://github.com/jarun/nnn) as terminal file-manager
+
 ## Software
 
 - Terminal: [Alacritty](https://alacritty.org)
