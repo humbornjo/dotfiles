@@ -1,0 +1,68 @@
+.profile
+.cargo/
+.aws/
+.azure
+.basement
+.config/fish/fish_variables
+.config/fish/functions/fzf_key_bindings.fish
+.config/karabiner/
+.DS_Store
+.ipython/
+.jupyter/
+.wget-hsts
+.zshenv
+.gnupg/trustdb.gpg
+.npmrc
+.nyc_output
+.ssh/
+.wakatime.cfg
+.yarnrc
+basement_dist
+config.local.js
+coverage/
+dist
+Library/
+Library/Application Support/activitywatch
+Library/Application Support/Adobe
+Library/Application Support/com.elgato.StreamDeck
+Library/Application Support/com.elgato.StreamDeck
+Library/Application Support/com.elgato.StreamDeck
+Library/Application Support/com.elgato.StreamDeck
+Library/Application Support/com.elgato.StreamDeck
+Library/Application Support/com.elgato.StreamDeck/Cache.db
+Library/Application Support/Loopback/Devices.plist
+Library/Application Support/mkcert
+Library/Application Support/obs-studio
+Library/Application Support/Rocket/rocket.db
+Library/Application Support/zoxide/db.zo
+Library/Developer/Xcode/UserData/KeyBindings
+Library/Group Containers/com.apple.PreviewLegacySignaturesConversion/Library/Preferences/com.apple.PreviewLegacySignaturesConversion.plist
+Library/Preferences/com.adobe.illustrator.plist
+Library/Preferences/com.adobe.Photoshop.plist
+Library/Preferences/com.apple.dt.Xcode.plist
+Library/Preferences/com.apple.Music.eq.plist
+Library/Preferences/com.apple.Music.plist
+Library/Preferences/com.apple.symbolichotkeys.plist
+Library/Preferences/com.apple.Terminal.plist
+Library/Preferences/com.colliderli.iina.plist
+Library/Preferences/com.knollsoft.Rectangle.plist
+Library/Preferences/com.logitech.manager.setting.ffff.plist
+Library/Preferences/com.obsproject.obs-studio.plist
+Library/Preferences/com.raycast.macos.plist
+Library/Preferences/com.rogueamoeba.Loopback.plist
+Library/Preferences/com.spotify.client.plist
+Library/Preferences/name.guoc.SpaceLauncher.plist
+Library/Preferences/net.matthewpalmer.Rocket.plist
+Library/Preferences/us.zoom.Transcode.plist
+Library/Preferences/us.zoom.xos.Hotkey.plist
+Library/Preferences/us.zoom.xos.plist
+Library/Preferences/us.zoom.ZoomAutoUpdater.plist
+Library/Preferences/ZoomChat.plist
+logs
+npm-debug.log
+pids
+run
+.config/fish/conf.d/openai.fish
+.config/fish/conf.d/nu.fish
+.config/fish/temp
+.config/git/config
