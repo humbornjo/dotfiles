@@ -10,7 +10,7 @@ Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respec
 
 ## TODO
 - From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)
-- Add [nnn](https://github.com/jarun/nnn) as terminal file-manager
+- DONE: ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
 
 ## Software
 
@@ -21,6 +21,7 @@ Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respec
 - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 - Editor: [Neovim](https://neovim.io) + [AstroNvim](https://astronvim.com/)
 - Git: [lazygit](https://github.com/jesseduffield/lazygit)
+- terminal file manager: [nnn](https://github.com/jarun/nnn)
 - macOS package manager: [Homebrew](https://brew.sh)
 - npm package manager: [pnpm](https://pnpm.io/)
 
