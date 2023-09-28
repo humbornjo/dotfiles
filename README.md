@@ -9,7 +9,8 @@ Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respec
 ![](./asset/nvim.png)
 
 ## TODO
-- From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)
+- ABORTED: ~~From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)~~
+  because fish is super cool and nushell is not as productive as they said.
 - DONE: ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
 
 ## Software
