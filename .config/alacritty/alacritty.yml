@@ -17,6 +17,7 @@ shell:
   program: /opt/homebrew/bin/fish
 
 window:
+  option_as_alt: OnlyLeft
   decorations: buttonless
   dynamic_padding: false
   opacity: 0.9

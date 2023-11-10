@@ -4,7 +4,7 @@ services:
     image: ghcr.io/dreamacro/clash
     restart: always
     volumes:
-      - ./config.yaml:/root/.config/clash/config.yaml:ro
+      - ./kuromis.yaml:/root/.config/clash/config.yaml:ro
       - ./ui:/ui # dashboard volume
     ports:
       - "7890:7890"

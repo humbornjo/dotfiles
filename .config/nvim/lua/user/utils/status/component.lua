@@ -210,8 +210,8 @@ end
 function M.git_diff(opts)
   opts = extend_tbl({
     added = { icon = { kind = "GitAdd", padding = { left = 1, right = 1 } } },
-    changed = { icon = { kind = "GitChange", padding = { left = 1, right = 1 } } },
     removed = { icon = { kind = "GitDelete", padding = { left = 1, right = 1 } } },
+    changed = { icon = { kind = "GitChange", padding = { left = 1, right = 1 } } },
     hl = hl.get_attributes "git_diff",
     on_click = {
       name = "heirline_git",
@@ -225,7 +225,7 @@ function M.git_diff(opts)
     update = { "User", pattern = "GitSignsUpdate" },
     init = init.update_events { "BufEnter" },
   }, opts)
-  return M.builder(status_utils.setup_providers(opts, { "added", "changed", "removed" }, function(p_opts, p)
+  return M.builder(status_utils.setup_providers(opts, { "added", "removed", "changed" }, function(p_opts, p)
     local out = status_utils.build_provider(p_opts, p)
     if out then
       out.provider = "git_diff"

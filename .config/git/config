@@ -1,0 +1,47 @@
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+; [include]
+;     path = ~/.config/delta/themes.gitconfig
+
+[core]
+    pager = delta ;--pager less -- -S
+
+[interactive]
+    diffFilter = delta ;--color-only
+
+[delta]
+    syntax-theme = Catppuccin-mocha
+    line-numbers = true
+    plus-style = syntax omit
+    minus-style = syntax omit
+    line-numbers-plus-style = green
+    line-numbers-minus-style = red
+    plus-emph-style = red omit
+    minus-emph-style = green omit
+    plus-empty-line-marker-style = omit
+    minus-empty-line-marker-style = omit
+    zero-style = syntax omit
+    blame-code-style = syntax omit
+    blame-separator-style = syntax
+    blame-palette = "#00000000"
+    line-numbers-right-style = green
+    line-numbers-left-style = red
+    wrap-max-lines = 2
+    pager = "less -SXRF"
+    paging = "always"
+    max-line-length = 20
+    ; file-style = omit
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+[user]
+	name = humbornjo
+	email = humbornjo@gmail.com

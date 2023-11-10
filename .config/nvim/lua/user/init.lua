@@ -27,13 +27,24 @@ return {
   },
 
   lsp = {
+    setup_handlers = {
+      -- add custom handler
+      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
+    },
+    config = {
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
+      },
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
+          "go", "rust", "cpp", "c", "lua", 
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -53,7 +64,15 @@ return {
       -- "pyright"
     },
   },
-
+  plugins = {
+    "simrat39/rust-tools.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "rust_analyzer" },
+      },
+    },
+  },
   -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },

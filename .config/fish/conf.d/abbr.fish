@@ -65,11 +65,11 @@ abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 abbr ka killall
 abbr kn "killall node"
 
-abbr l "lsd  --group-dirs first -A"
+abbr ls exa
 abbr ld lazydocker
 abbr lg lazygit
-abbr ll "lsd  --group-dirs first -Al"
-abbr lt "lsd  --group-dirs last -A --tree"
+abbr ll "exa -al"
+abbr lt "exa -T"
 
 abbr nb "npm run build"
 abbr nd "npm run dev"
@@ -94,10 +94,11 @@ abbr pit "pnpm install-test"
 abbr pl "pnpm link"
 abbr pls "pnpm ls"
 abbr pr "pnpm run"
-abbr ps "pnpm start"
+abbr ps "procs"
 abbr psa "pnpm store add"
 abbr psp "pnpm store prune"
 abbr pss "pnpm store status"
+abbr pst "pnpm start"
 abbr pt "pnpm test"
 abbr pu "pnpm update"
 abbr pul "pnpm unlink"

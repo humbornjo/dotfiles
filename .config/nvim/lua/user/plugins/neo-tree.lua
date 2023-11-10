@@ -1,6 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  lazy = false,
+  lazy = true,
   branch = "main", -- HACK: force neo-tree to checkout `main` for initial v3 migration since default branch has changed
   dependencies = { 
     "nvim-lua/plenary.nvim",
@@ -15,6 +15,7 @@ return {
     return {
       auto_clean_after_session_restore = true,
       enable_diagnostics = false,
+      enable_git_status = false,
       close_if_last_window = true,
       sources = { "filesystem", "buffers", "git_status" },
       source_selector = {

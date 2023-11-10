@@ -9,9 +9,9 @@
 # https://fishshell.com/
 
 eval (/opt/homebrew/bin/brew shellenv)
+eval "$(pyenv init -)"
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-pyenv init - | source
 fnm --log-level quiet env --use-on-cd | source
 
 set -U fish_greeting # disable fish greeting
@@ -35,6 +35,7 @@ fish_add_path $HOME/.config/bin # my custom scripts
 # rust 
 set -Ux CARGO_HOME "$HOME/.cargo"
 set -Ux RUSTUP_HOME "$HOME/.rustup"
+fish_add_path $CARGO_HOME/bin
 
 # pnpm
 set -gx PNPM_HOME "/Users/humborn/Library/pnpm"
@@ -45,3 +46,7 @@ end
 
 # humborn asymmetric tech
 set -Ux WG_ASY -1
+
+# flutter from fvm
+set -Ux FVM_HOME "$HOME/.fvm"
+fish_add_path $FVM_HOME/default/bin

@@ -7,7 +7,9 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("user.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "clangd",
+        "gopls",
+        "pyright",
       })
     end,
   },
@@ -25,12 +27,50 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
+    lazy = false,
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("user.utils").list_insert_unique(opts.ensure_installed, {
-        -- "python",
+        "python",
+        "codelldb",
+        "cppdbg",
       })
+
+      opts.filetypes = {
+        ['bash'] = { 'sh' },
+	      ['chrome'] = { 'javascriptreact', 'typescriptreact', 'typescript', 'javascript' },
+	      ['codelldb'] = { 'rust' },
+	      ['coreclr'] = { 'cs', 'fsharp' },
+	      ['cppdbg'] = { 'c', 'cpp', 'asm', 'swift' },
+	      ['dart'] = { 'dart' },
+	      ['delve'] = { 'go' },
+	      ['firefox'] = { 'javascriptreact', 'typescriptreact', 'typescript', 'javascript' },
+	      ['kotlin'] = { 'kotlin' },
+	      ['mix_task'] = { 'elixir' },
+	      ['node2'] = { 'javascriptreact', 'typescriptreact', 'typescript', 'javascript' },
+	      ['php'] = { 'php' },
+	      ['python'] = { 'python' },
+	      ['haskell'] = { 'haskell' },
+      }
+
+      opts.handlers = {
+        cppdbg = function(config)
+          config.configurations = {
+            name = "Launch file",
+            type = "codelldb",
+            request = "launch",
+            program = function()
+              require('rust-tools').runnables.runnables()
+              return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+            end,
+            MIMode = "lldb",
+            cwd = "${workspaceFolder}",
+            stopAtEntry = true,
+          }
+          require('mason-nvim-dap').default_setup(config)
+        end,
+      }
     end,
   },
 }
