@@ -4,10 +4,11 @@ services:
     image: ghcr.io/dreamacro/clash
     restart: always
     volumes:
-      - ./kuromis.yaml:/root/.config/clash/config.yaml:ro
+      - ./kuro.yaml:/root/.config/clash/config.yaml:ro
       - ./ui:/ui # dashboard volume
     ports:
       - "7890:7890"
       - "7891:7891"
+      - "7892:7892"
       - "9090:9090" # The External Controller (RESTful API)
     network_mode: "bridge"

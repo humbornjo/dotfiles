@@ -44,9 +44,6 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-# humborn asymmetric tech
-set -Ux WG_ASY -1
-
 # flutter from fvm
 set -Ux FVM_HOME "$HOME/.fvm"
 fish_add_path $FVM_HOME/default/bin

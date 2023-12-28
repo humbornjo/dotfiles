@@ -9,6 +9,7 @@ brew install fd
 brew install fish
 brew install fzf
 brew install gh
+brew install exa
 brew install git
 brew install git-delta
 brew install lazydocker
@@ -42,8 +43,8 @@ brew install lolcat
 
 
 # For configuring these two, pls refer to Doctor. Google
-brew install skhd
-brew install yabai
+brew install koekeishiya/formulae/skhd
+brew install koekeishiya/formulae/yabai
 
 # UI app
 brew install --cask alacritty
@@ -51,6 +52,7 @@ brew install --cask alfred
 brew install --cask obsidian 
 brew install --cask spacelauncher 
 brew install --cask karabiner-elements
+brew install --cask spotify
 
 # From github
 #-AstroNvim
@@ -63,13 +65,14 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim
 
-#-fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install FabioAntunes/fish-nvm franciscolourenco/done
-
 #-nvm
 mkdir ~/.nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+#-fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install FabioAntunes/fish-nvm edc/bass
+fisher install franciscolourenco/done
 
 #-tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

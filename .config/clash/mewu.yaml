@@ -1,7 +1,7 @@
 #!MANAGED-CONFIG https://adamz.digital/link/hIzshmy5q0tfnCDj?clash=1
 
 #---------------------------------------------------#
-## 上次更新于：2023-08-22 14:51:59
+## 上次更新于：2023-12-08 21:57:09
 #---------------------------------------------------#
 
 port: 7890
@@ -11,6 +11,7 @@ allow-lan: true
 mode: rule
 log-level: silent
 external-controller: '0.0.0.0:9090'
+external-ui: /ui
 secret: ''
 dns:
   enable: true
@@ -141,70 +142,6 @@ proxies:
     password: fd39f057-1197-317d-8bb8-f3ffc98526b3
     sni: hk8.adamc.us
     udp: true
-  -
-    name: '🇹🇼 V4-台湾3-Hinet'
-    type: trojan
-    server: tw3.adamc.us
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: tw3.adamc.us
-    udp: true
-  -
-    name: '🇯🇵 V4-日本8'
-    type: trojan
-    server: jp8.adamc.us
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: jp8.adamc.us
-    udp: true
-  -
-    name: '🇺🇲 V4-美国3-CN2'
-    type: trojan
-    server: us3.sbirdo-node.com
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: us3.sbirdo-node.com
-    udp: true
-  -
-    name: '🇰🇷 V4-韩国'
-    type: trojan
-    server: kr.adamc.us
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: kr.adamc.us
-    udp: true
-  -
-    name: '🇭🇰 V4-香港-Azure'
-    type: trojan
-    server: hk12.adamc.us
-    port: 10443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: hk12.adamc.us
-    udp: true
-  -
-    name: '🇭🇰 V4-香港-CN2'
-    type: trojan
-    server: hk11.sbirdo-node.com
-    port: 12443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: hk11.sbirdo-node.com
-    udp: true
-  -
-    name: '🇭🇰 V4-香港3-CMI'
-    type: trojan
-    server: hk3.adamc.us
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: hk3.adamc.us
-    udp: true
-  -
-    name: '🇭🇰 V4-香港6-BGP'
-    type: trojan
-    server: hk6.adamc.us
-    port: 443
-    password: fd39f057-1197-317d-8bb8-f3ffc98526b3
-    sni: hk6.adamc.us
-    udp: true
 proxy-groups:
   -
     name: 🔰国外流量
@@ -224,20 +161,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
-      - 🚀直接连接
-  -
-    name: ⚓️其他流量
-    type: select
-    proxies:
-      - 🔰国外流量
       - 🚀直接连接
   -
     name: ✈️Telegram
@@ -258,14 +181,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
   -
     name: 🎬Youtube
     type: select
@@ -285,14 +200,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
   -
     name: 🎬Netflix
     type: select
@@ -312,14 +219,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
   -
     name: 🎬哔哩哔哩
     type: select
@@ -339,14 +238,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
   -
     name: 🎬国外媒体
     type: select
@@ -366,14 +257,6 @@ proxy-groups:
       - '🇭🇰 V3-香港2-Azure'
       - '🇭🇰 V3-香港7-HKT'
       - '🇭🇰 V3-香港8-HGC'
-      - '🇹🇼 V4-台湾3-Hinet'
-      - '🇯🇵 V4-日本8'
-      - '🇺🇲 V4-美国3-CN2'
-      - '🇰🇷 V4-韩国'
-      - '🇭🇰 V4-香港-Azure'
-      - '🇭🇰 V4-香港-CN2'
-      - '🇭🇰 V4-香港3-CMI'
-      - '🇭🇰 V4-香港6-BGP'
   -
     name: 🍎苹果服务
     type: select
@@ -385,6 +268,12 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+  -
+    name: ⚓️其他流量
+    type: select
+    proxies:
+      - 🔰国外流量
+      - 🚀直接连接
 
 
 rules:
