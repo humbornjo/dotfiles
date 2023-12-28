@@ -71,8 +71,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 #-fisher
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install FabioAntunes/fish-nvm edc/bass
-fisher install franciscolourenco/done
+fisher install franciscolourenco/done edc/bass
 
 #-tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
