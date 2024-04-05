@@ -45,3 +45,8 @@
 [user]
 	name = humbornjo
 	email = humbornjo@gmail.com
+[http]
+	proxy = socks5://127.0.0.1:7897
+	sslBackend = openssl
+[https]
+	proxy = socks5://127.0.0.1:7897

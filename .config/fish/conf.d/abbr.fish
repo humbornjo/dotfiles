@@ -73,7 +73,7 @@ abbr lt "exa -T"
 
 abbr nb "npm run build"
 abbr nd "npm run dev"
-abbr nf neofetch
+abbr nf fastfetch
 abbr ni "npm install"
 abbr nt "npm run test"
 abbr nxdg "nx dep-graph"

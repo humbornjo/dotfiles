@@ -20,7 +20,7 @@ window:
   option_as_alt: OnlyLeft
   decorations: buttonless
   dynamic_padding: false
-  opacity: 0.9
+  opacity: 1
   padding:
     x: 25
     y: 20

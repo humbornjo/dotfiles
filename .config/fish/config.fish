@@ -47,3 +47,7 @@ end
 # flutter from fvm
 set -Ux FVM_HOME "$HOME/.fvm"
 fish_add_path $FVM_HOME/default/bin
+
+if not set -q TMUX
+    tmux
+end
