@@ -1,7 +1,11 @@
 # humbornjo's Dotfiles
 
 This is the home of all my dotfiles. 
-Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
+* ~~2023: Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
+* 2024: Still based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
+
+## New
+Fix some appearence issues, now ever'y thing is prettier!
 
 ## Preview
 ![](./asset/exa.png)
@@ -16,13 +20,13 @@ Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respec
 ## Software
 
 - Terminal: [Alacritty](https://alacritty.org)
-- Font: [SF Mono Ligaturized](https://github.com/kube/sf-mono-ligaturized)
+- Font: [SF Mono Nerd Font](https://github.com/humbornjo/SF-Mono-Nerd-Font)
 - Colors: [catppuccin](https://github.com/catppuccin/catppuccin)
 - Shell: [fish](https://fishshell.com)
 - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 - Editor: [Neovim](https://neovim.io) + [AstroNvim](https://astronvim.com/)
 - Git: [lazygit](https://github.com/jesseduffield/lazygit)
-- terminal file manager: [nnn](https://github.com/jarun/nnn)
+- terminal file manager: [yazi](https://github.com/sxyazi/yazi)
 - macOS package manager: [Homebrew](https://brew.sh)
 - npm package manager: [pnpm](https://pnpm.io/)
 
@@ -30,4 +34,4 @@ Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respec
 
 - Laptop: macbook air (14-inch, 2022, Apple M2 Chip, 16GB RAM)
 - Keyboard: Vanilla
-- Mouse: Logitech M590
+- Mouse: Logitech MX Master 3S

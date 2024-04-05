@@ -1,3 +1,3 @@
 function moon
-  curl wttr.in/Moon
+  curl -s wttr.in/Moon | ghead -n -2
 end
