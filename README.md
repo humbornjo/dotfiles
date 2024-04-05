@@ -1,8 +1,8 @@
 # humbornjo's Dotfiles
 
 This is the home of all my dotfiles. 
-* ~~2023: Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
-* 2024: Still based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~
+* ~~2023: Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~~
+* 2024: Still based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect
 
 ## New
 Fix some appearence issues, now ever'y thing is prettier!
