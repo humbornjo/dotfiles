@@ -8,7 +8,7 @@ return {
     transparent_background = true,
     integrations = {
       cmp = true,
-      bufferline = false,
+      -- bufferline = false,
       neotree = true,
       fidget = true,
       gitsigns = true,
@@ -26,12 +26,12 @@ return {
       symbols_outline = true,
       illuminate = true,
       which_key = true,
-      barbecue = {
-        dim_dirname = true,
-        bold_basename = true,
-        dim_context = false,
-        alt_background = false,
-      },
+      -- barbecue = {
+      --   dim_dirname = true,
+      --   bold_basename = true,
+      --   dim_context = false,
+      --   alt_background = false,
+      -- },
       native_lsp = {
         enabled = true,
         virtual_text = {

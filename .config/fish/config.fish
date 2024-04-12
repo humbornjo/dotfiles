@@ -25,12 +25,13 @@ set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux PAGER "~/.local/bin/nvimpager" # 'lucc/nvimpager'
 set -Ux VISUAL nvim
 
-# golang - https://golang.google.cn/
-set -Ux GOPATH "/Users/humborn/Library/go"
-fish_add_path $GOPATH/bin
-
+# personal config
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin # my custom scripts
+
+# golang 
+set -Ux GOPATH "/Users/humborn/Library/go"
+fish_add_path $GOPATH/bin
 
 # rust 
 set -Ux CARGO_HOME "$HOME/.cargo"
@@ -42,12 +43,15 @@ set -gx PNPM_HOME "/Users/humborn/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
-# pnpm end
 
-# flutter from fvm
+# fvm: flutter version manager 
 set -Ux FVM_HOME "$HOME/.fvm"
 fish_add_path $FVM_HOME/default/bin
 
+# pyenv: disable some unpleasent msg
+set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
+
+# tmux: graceful start
 if not set -q TMUX
     tmux
 end

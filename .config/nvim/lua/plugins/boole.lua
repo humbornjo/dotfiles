@@ -3,21 +3,21 @@ return {
   event = "BufEnter",
   opts = {
     mappings = {
-      increment = "<C-a>",
-      decrement = "<C-x>",
+      increment = "<C-k>",
+      decrement = "<C-j>",
       -- true
       -- no
       -- 6
     },
     additions = {
       { "production", "development", "test", "sandbox" },
-      { "let", "const" },
-      { "start", "end" },
-      { "before", "after" },
-      { "plus", "minus" },
-      { "smart", "truncate" },
-      { "left", "right" },
-      { "is", "are" },
+      { "let",        "const" },
+      { "start",      "end" },
+      { "before",     "after" },
+      { "plus",       "minus" },
+      { "smart",      "truncate" },
+      { "left",       "right" },
+      { "is",         "are" },
     },
   },
 }
