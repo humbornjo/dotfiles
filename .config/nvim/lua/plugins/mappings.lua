@@ -24,7 +24,6 @@ return {
         },
         x = {
           ["ga"] = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
-          ["<cmd>s"] = { "<leader>w" }
         },
         i = {
           -- move like a ninja
@@ -32,6 +31,7 @@ return {
           ["<C-k>"] = { "<C-o>k" },
           ["<C-h>"] = { "<C-o>h" },
           ["<C-l>"] = { "<C-o>l" },
+          ["<C-d>"] = { "<esc>cw" },
         },
         t = {
           -- setting a mapping to false will disable it
