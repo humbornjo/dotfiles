@@ -21,6 +21,7 @@ return {
       telescope = {
         enabled = true,
       },
+      overseer = true,
       treesitter = true,
       treesitter_context = false,
       symbols_outline = true,

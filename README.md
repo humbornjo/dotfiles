@@ -16,6 +16,7 @@ Fix some appearence issues, now ever'y thing is prettier!
 - ABORTED: ~~From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)~~
   because fish is super cool and nushell is not as productive as they said.
 - DONE: ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
+- TODO: learn how to improve my workflow using dap and overseer.
 
 ## Software
 
