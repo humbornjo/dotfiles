@@ -222,7 +222,7 @@ mods = "Command"
 decorations = "buttonless"
 dynamic_padding = false
 opacity = 0.96
-option_as_alt = "Both"
+option_as_alt = "OnlyLeft"
 
 [window.dimensions]
 columns = 75
