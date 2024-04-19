@@ -34,6 +34,7 @@ abbr fi "fisher install"
 abbr fr "fisher refresh"
 abbr fu "fisher update"
 abbr fl "fisher list | sed 's/.*/"&"/'"
+abbr fk "fuck"
 
 abbr g "git status"
 abbr ga "git add ."

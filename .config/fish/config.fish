@@ -55,3 +55,5 @@ set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 if not set -q TMUX
     tmux
 end
+
+thefuck --alias | source

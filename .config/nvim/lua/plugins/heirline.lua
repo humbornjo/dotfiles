@@ -46,31 +46,29 @@ return {
     }
 
     opts.tabline = { -- tabline
-      { -- file tree padding
+      {              -- file tree padding
         condition = function(self)
           local win = vim.api.nvim_tabpage_list_wins(0)[1]
           local bufnr = vim.api.nvim_win_get_buf(win)
-          if vim.bo[bufnr].filetype == "neo-tree" then
-            self.title = "Neotree"
-          end
+          self.title = "Workspace"
           self.winid = win
           self.winwidth = vim.api.nvim_win_get_width(self.winid)
           return self.winwidth ~= vim.o.columns -- only apply to sidebars
-            and not require("astrocore.buffer").is_valid(
-              vim.api.nvim_win_get_buf(self.winid)
-            ) -- if buffer is not in tabline
+              and not require("astrocore.buffer").is_valid(
+                vim.api.nvim_win_get_buf(self.winid)
+              ) -- if buffer is not in tabline
         end,
         provider = function(self)
-          return (" "):rep(1) .. self.title .. (" "):rep(self.winwidth - 7)
+          return (" "):rep(1) .. self.title .. (" "):rep(self.winwidth - 9)
         end,
         hl = { bg = "tabline_bg" },
       },
       status.heirline.make_buflist(status.component.tabline_file_info()), -- component for each buffer tab
-      status.component.fill({ hl = { bg = "tabline_bg" } }), -- fill the rest of the tabline with background color
-      { -- tab list
+      status.component.fill({ hl = { bg = "tabline_bg" } }),              -- fill the rest of the tabline with background color
+      {                                                                   -- tab list
         condition = function()
           return #vim.api.nvim_list_tabpages() >= 2
-        end, -- only show tabs if there are more than one
+        end,                           -- only show tabs if there are more than one
         status.heirline.make_tablist({ -- component for each tab
           provider = status.provider.tabnr(),
           hl = function(self)

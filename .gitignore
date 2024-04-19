@@ -1,3 +1,5 @@
+.profile
+.cargo/
 .aws/credentials
 .azure
 .basement
