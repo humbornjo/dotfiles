@@ -1,6 +1,6 @@
 .profile
 .cargo/
-.aws/credentials
+.aws/
 .azure
 .basement
 .config/fish/fish_variables
