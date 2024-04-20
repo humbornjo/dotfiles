@@ -99,12 +99,12 @@ chars = """
 key = "S"
 mods = "Command"
 
-[[keyboard.bindings]]
-chars = """
-\u001B:wq
-"""
-key = "S"
-mods = "Command|Shift"
+# [[keyboard.bindings]]
+# chars = """
+# \u001B:wq
+# """
+# key = "S"
+# mods = "Command|Shift"
 
 [[keyboard.bindings]]
 chars = "\u0002c"

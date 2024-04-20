@@ -27,11 +27,11 @@ return {
         },
         i = {
           -- move like a ninja
-          ["<C-j>"] = { "<C-o>j" },
-          ["<C-k>"] = { "<C-o>k" },
-          ["<C-h>"] = { "<C-o>h" },
-          ["<C-l>"] = { "<C-o>l" },
-          ["<C-d>"] = { "<esc>cw" },
+          ["<C-j>"] = { "<Down>" },
+          ["<C-k>"] = { "<Up>" },
+          ["<C-h>"] = { "<Left>" },
+          ["<C-l>"] = { "<Right>" },
+          ["<C-e>"] = { "<esc>cw" },
         },
         t = {
           -- setting a mapping to false will disable it
