@@ -19,8 +19,12 @@ return {
           },
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
-          ["<leader>b"] = { name = "buffers", desc = " Buffers" },
-          ["ga"] = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
+          ["<leader>b"]  = { name = "buffers", desc = " Buffers" },
+          ["ga"]         = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
+          ["<A-Up>"]     = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
+          ["<A-Down>"]   = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
+          ["<A-Left>"]   = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
+          ["<A-Right>"]  = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
         },
         x = {
           ["ga"] = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
@@ -31,7 +35,7 @@ return {
           ["<C-k>"] = { "<Up>" },
           ["<C-h>"] = { "<Left>" },
           ["<C-l>"] = { "<Right>" },
-          ["<C-e>"] = { "<esc>cw" },
+          ["<C-e>"] = { "<esc>ea" },
         },
         t = {
           -- setting a mapping to false will disable it
