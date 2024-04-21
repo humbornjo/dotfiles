@@ -6,7 +6,7 @@
 ;     path = ~/.config/delta/themes.gitconfig
 
 [core]
-    pager = delta ;--pager less -- -S
+    pager = delta 
 
 [interactive]
     diffFilter = delta ;--color-only

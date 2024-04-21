@@ -72,7 +72,7 @@ nvim
 
 # fisher
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install franciscolourenco/done edc/bass
+fisher install edc/bass   # franciscolourenco/done
 
 # tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
