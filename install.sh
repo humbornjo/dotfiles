@@ -6,33 +6,37 @@
 git clone https://github.com/humbornjo/SF-Mono-Nerd-Font
 cd SF-Mono-Nerd-Font && cp ./SF* $USER/Library/Fonts/
 
-# Routine features
-brew install bat         # sub for cat
-brew install fd
+# terminal & shell
 brew install fish
+brew install thefuck    # fuck is good
+brew install tmux
+brew install starship
+brew install zoxide
+
+# substitute
+brew install fd
+brew install bat        # sub for cat
+brew install exa        # sub for ls
+brew install htop       # sub for top
+brew install tree
+brew install ripgrep    # sub for grep
+
 brew install fzf
 brew install gh
-brew install exa
 brew install git
 brew install git-delta
-brew install lazydocker
-brew install lazygit
-brew install yazi        # terminal file manager
-brew install fnm         # node version manager
+brew install lazygit    # easy git
+brew install lazydocker # easy docker
+brew install yazi       # terminal file manager
+brew install fnm        # node version manager
 brew install lsd
-brew install tree
-brew install htop
 brew install pyenv
 brew install mackup
 brew install fastfetch
 brew install neovim
 brew install pgcli
-brew install ripgrep
-brew install starship
 brew install tealdeer
-brew install tmux
 brew install wakatime-cli
-brew install zoxide
 
 brew tap clementtsang/bottom
 brew install bottom
