@@ -1,4 +1,4 @@
-import = ["/Users/humborn/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+import = ["/Users/humborn/.config/alacritty/catppuccin/catppuccin-frappe.toml"]
 live_config_reload = true
 
 [shell]
@@ -221,7 +221,7 @@ mods = "Command"
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.96
+opacity = 0.98
 option_as_alt = "OnlyLeft"
 
 [window.dimensions]
