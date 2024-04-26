@@ -35,7 +35,10 @@ return {
           ["<C-k>"] = { "<Up>" },
           ["<C-h>"] = { "<Left>" },
           ["<C-l>"] = { "<Right>" },
-          ["<C-e>"] = { "<esc>ea" },
+          ["<C-w>"] = { "<C-w>" },
+          ["<A-w>"] = { "<C-o>dw" },
+          ["<C-s>"] = { "<Left><Del>" },
+          ["<A-s>"] = { "<Del>" },
         },
         t = {
           -- setting a mapping to false will disable it

@@ -1,4 +1,5 @@
 local local_icons = require("config.icons")
+local colors = require("catppuccin.palettes").get_palette()
 
 local function get_diagnostic_label(props)
   local icons = {
@@ -19,19 +20,19 @@ end
 
 local function get_git_diff(props)
   local icons = {
-    removed = { icon = local_icons.GitDelete, guifg = "#f38ba8" },
-    changed = { icon = local_icons.GitChange, guifg = "#f9e2af" },
-    added   = { icon = local_icons.GitAdd   , guifg = "#a6e3a1" },
+    removed = { icon = local_icons.GitDelete, guifg = colors.red },
+    changed = { icon = local_icons.GitChange, guifg = colors.yellow },
+    added   = { icon = local_icons.GitAdd, guifg = colors.green },
   }
-    -- removed = local_icons.GitDelete,
-    -- changed = local_icons.GitChange,
-    -- added   = local_icons.GitAdd,
+  -- removed = local_icons.GitDelete,
+  -- changed = local_icons.GitChange,
+  -- added   = local_icons.GitAdd,
   local labels = {}
   local success, signs = pcall(vim.api.nvim_buf_get_var, props.buf, "gitsigns_status_dict")
   if success then
     for name, icon_info in pairs(icons) do
       if tonumber(signs[name]) and signs[name] > 0 then
-        table.insert(labels, { icon_info.icon .. " " .. signs[name] .. " ", guifg = icon_info.guifg }) -- group = "Diff" .. name, 
+        table.insert(labels, { icon_info.icon .. " " .. signs[name] .. " ", guifg = icon_info.guifg }) -- group = "Diff" .. name,
       end
     end
     return labels
@@ -74,9 +75,9 @@ return {
         local buffer = {
           { get_git_diff(props) },
           { get_diagnostic_label(props) },
-          { ft_icon, guifg = ft_color,},
+          { ft_icon,                    guifg = ft_color, },
           { " " },
-          { filename, gui = modified },
+          { filename,                   gui = modified },
         }
         return buffer
       end,

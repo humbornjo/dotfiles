@@ -14,6 +14,7 @@ abbr blp "brew leaves --installed-as-dependency"
 abbr bs "brew search"
 
 abbr c clear
+abbr cat bat
 abbr cl clear
 abbr claer clear
 abbr clera clear
@@ -119,6 +120,7 @@ abbr tat "tmux attach -t"
 abbr td "t dotfiles"
 abbr tk "tmux kill-server"
 abbr tks "tmux kill-server"
+abbr top htop
 abbr tr "tldr --list | fzf --header 'tldr (tealdeer)' --reverse --preview 'tldr {1} --color=always' --preview-window=right,80% | xargs tldr"
 abbr tn "tmux new -s (basename (pwd))"
 abbr tt "t -d pwd"
