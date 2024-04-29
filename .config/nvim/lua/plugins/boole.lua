@@ -3,8 +3,8 @@ return {
   event = "BufEnter",
   opts = {
     mappings = {
-      increment = "<C-d>",
-      decrement = "<C-a>",
+      increment = "<A-w>",
+      decrement = "<A-s>",
       -- false
       -- no
       -- 6
