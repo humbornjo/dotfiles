@@ -8,6 +8,8 @@
 # The minimal, blazing-fast, and infinitely customizable prompt
 # https://starship.rs
 
+command_timeout = 2000
+
 [character]
 success_symbol = "[\uf054](green)" # 
 vicmd_symbol = "[\ue62b](white)" # 
@@ -26,6 +28,9 @@ disabled = true
 disabled = true
 
 [aws]
+disabled = true
+
+[gcloud]
 disabled = true
 
 [docker_context]
