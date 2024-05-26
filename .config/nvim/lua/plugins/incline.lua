@@ -1,18 +1,18 @@
 local local_icons = require("config.icons")
-local colors = require("catppuccin.palettes").get_palette()
+local colors = require("gruvbox-material.colors").get(vim.o.background, "hard")
 
 local function get_diagnostic_label(props)
   local icons = {
-    error = local_icons.DiagnosticError,
-    warn = local_icons.DiagnosticWarn,
-    info = local_icons.DiagnosticInfo,
-    hint = local_icons.DiagnosticHint,
+    error = { icon = local_icons.DiagnosticError, guifg = colors.red },
+    warn  = { icon = local_icons.DiagnosticWarn, guifg = colors.yellow },
+    hint  = { icon = local_icons.DiagnosticHint, guifg = colors.blue },
+    info  = { icon = local_icons.DiagnosticInfo, guifg = colors.green },
   }
   local label = {}
-  for severity, icon in pairs(icons) do
+  for severity, icon_info in pairs(icons) do
     local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
     if n > 0 then
-      table.insert(label, { icon .. " " .. n .. " ", group = "DiagnosticSign" .. severity })
+      table.insert(label, { icon_info.icon .. " " .. n .. " ", guifg = icon_info.guifg })
     end
   end
   return label
@@ -48,7 +48,7 @@ end
 
 return {
   "b0o/incline.nvim",
-  enabled = true,
+  enabled = false,
   event = "BufEnter",
   config = function()
     require("incline").setup({

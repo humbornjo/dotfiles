@@ -1,4 +1,4 @@
-import = ["/Users/humborn/.config/alacritty/catppuccin/catppuccin-frappe.toml"]
+import = ["/Users/humborn/.config/alacritty/theme/gruvbox_material_hard_dark.toml"]
 live_config_reload = true
 
 [shell]
@@ -221,7 +221,7 @@ mods = "Command"
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.98
+opacity = 1
 option_as_alt = "OnlyLeft"
 
 [window.dimensions]
@@ -233,4 +233,4 @@ x = 25
 y = 20
 
 [colors.primary]
-background = "#181818"
+background = "#1d2021"
