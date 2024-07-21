@@ -17,5 +17,8 @@ return {
       background_color = nil,  -- set color for float backgrounds. If nil, uses the default color set
       -- by the color scheme
     },
+    signs = {
+      highlight = false, -- whether to highlight signs
+    },
   },
 }

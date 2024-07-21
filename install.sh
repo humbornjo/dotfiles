@@ -13,7 +13,7 @@ brew install zoxide
 
 brew install fd
 brew install bat                        # sub for cat
-brew install exa                        # sub for ls
+brew install eza                        # sub for ls
 brew install htop                       # sub for top
 brew install tree
 brew install ripgrep                    # sub for grep

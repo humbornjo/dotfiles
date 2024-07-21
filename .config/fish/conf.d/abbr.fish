@@ -67,11 +67,11 @@ abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 abbr ka killall
 abbr kn "killall node"
 
-abbr ls exa
+abbr ls eza
+abbr ll "eza -al"
+abbr lt "eza -T"
 abbr ld lazydocker
 abbr lg lazygit
-abbr ll "exa -al"
-abbr lt "exa -T"
 
 abbr nb "npm run build"
 abbr nd "npm run dev"

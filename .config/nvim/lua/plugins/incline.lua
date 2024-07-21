@@ -5,8 +5,8 @@ local function get_diagnostic_label(props)
   local icons = {
     error = { icon = local_icons.DiagnosticError, guifg = colors.red },
     warn  = { icon = local_icons.DiagnosticWarn, guifg = colors.yellow },
-    hint  = { icon = local_icons.DiagnosticHint, guifg = colors.blue },
-    info  = { icon = local_icons.DiagnosticInfo, guifg = colors.green },
+    hint  = { icon = local_icons.DiagnosticHint, guifg = colors.green },
+    info  = { icon = local_icons.DiagnosticInfo, guifg = colors.blue },
   }
   local label = {}
   for severity, icon_info in pairs(icons) do
@@ -21,7 +21,7 @@ end
 local function get_git_diff(props)
   local icons = {
     removed = { icon = local_icons.GitDelete, guifg = colors.red },
-    changed = { icon = local_icons.GitChange, guifg = colors.yellow },
+    changed = { icon = local_icons.GitChange, guifg = colors.blue },
     added   = { icon = local_icons.GitAdd, guifg = colors.green },
   }
   -- removed = local_icons.GitDelete,
@@ -48,7 +48,7 @@ end
 
 return {
   "b0o/incline.nvim",
-  enabled = false,
+  enabled = true,
   event = "BufEnter",
   config = function()
     require("incline").setup({
@@ -58,10 +58,8 @@ return {
         only_win = false,
       },
       window = {
-        -- margin = {
-        --   horizontal = 1,
-        --   vertical = 2,
-        -- },
+        padding = 0,
+        margin = { horizontal = 0 },
         placement = {
           horizontal = "right",
           vertical = "top",
@@ -71,13 +69,20 @@ return {
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
         local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
         local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
+        local helpers = require 'incline.helpers'
 
         local buffer = {
-          { get_git_diff(props) },
-          { get_diagnostic_label(props) },
-          { ft_icon,                    guifg = ft_color, },
-          { " " },
+          -- ' ',
+          -- { ft_icon,  guifg = ft_color, },
+          -- ' ',
+          -- { filename, gui = modified },
+          ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
+          ' ',
           { filename,                   gui = modified },
+          ' ',
+          -- { get_git_diff(props) },
+          { get_diagnostic_label(props) },
+          guibg = '#282828'
         }
         return buffer
       end,

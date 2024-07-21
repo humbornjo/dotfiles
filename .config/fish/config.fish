@@ -19,11 +19,11 @@ set -U fish_key_bindings fish_vi_key_bindings
 # set -U LANG en_US.UTF-8
 # set -U LC_ALL en_US.UTF-8
 
-set -Ux BAT_THEME Catppuccin-mocha # 'sharkdp/bat' cat clone
-set -Ux EDITOR nvim # 'neovim/neovim' text editor
+set -Ux BAT_THEME "Catppuccin-mocha" # 'sharkdp/bat' cat clone
+set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux PAGER "~/.local/bin/nvimpager" # 'lucc/nvimpager'
-set -Ux VISUAL nvim
+set -Ux VISUAL "nvim"
 
 # personal config
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
@@ -55,5 +55,3 @@ set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 if not set -q TMUX
     tmux
 end
-
-thefuck --alias | source
