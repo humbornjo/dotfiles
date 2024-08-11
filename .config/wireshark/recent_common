@@ -25,14 +25,14 @@ recent.display_filter: http2
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 153
+gui.geometry_main_x: 5
 gui.geometry_main_y: 42
-gui.geometry_main_width: 1311
+gui.geometry_main_width: 1460
 gui.geometry_main_height: 881
 
 # Main window maximized.
 # TRUE or FALSE (case-insensitive).
-gui.geometry_main_maximized: FALSE
+gui.geometry_main_maximized: TRUE
 
 # Leftalign Action Buttons.
 # TRUE or FALSE (case-insensitive).
