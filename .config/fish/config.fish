@@ -30,7 +30,7 @@ fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin # my custom scripts
 
 # golang 
-set -Ux GOPATH "/Users/humborn/Library/go"
+set -Ux GOPATH "$HOME/Library/go"
 fish_add_path $GOPATH/bin
 
 # rust 
@@ -39,7 +39,7 @@ set -Ux RUSTUP_HOME "$HOME/.rustup"
 fish_add_path $CARGO_HOME/bin
 
 # pnpm
-set -gx PNPM_HOME "/Users/humborn/Library/pnpm"
+set -gx PNPM_HOME "$HOME/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
@@ -55,3 +55,6 @@ set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 if not set -q TMUX
     tmux
 end
+
+# ghcup 
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /Users/humborn/.ghcup/bin # ghcup-env
