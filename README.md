@@ -22,7 +22,7 @@ Fix some appearence issues, now ever'y thing is prettier!
 
 - Terminal: [Alacritty](https://alacritty.org)
 - Font: [SF Mono Nerd Font](https://github.com/humbornjo/SF-Mono-Nerd-Font)
-- Colors: [catppuccin](https://github.com/catppuccin/catppuccin)
+- Colors: [gruvbox-material](https://github.com/f4z3r/gruvbox-material.nvim)
 - Shell: [fish](https://fishshell.com)
 - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 - Editor: [Neovim](https://neovim.io) + [AstroNvim](https://astronvim.com/)
