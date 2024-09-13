@@ -32,3 +32,31 @@ require('gruvbox-material').setup({
   },
   customize = nil,
 })
+
+local t = require("telescope")
+local z_utils = require("telescope._extensions.zoxide.utils")
+
+-- Configure the extension
+t.setup({
+  extensions = {
+    zoxide = {
+      prompt_title = "fork may",
+      mappings = {
+        default = {
+          action = function(selection)
+            require("oil").open(selection.path)
+          end,
+          after_action = function(selection)
+            vim.notify("Directory changed to " .. selection.path)
+          end,
+        },
+      },
+    },
+  },
+})
+
+-- Load the extension
+t.load_extension('zoxide')
+
+-- Add a mapping
+vim.keymap.set("n", "Z", t.extensions.zoxide.list)

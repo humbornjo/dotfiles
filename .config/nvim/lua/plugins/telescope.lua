@@ -9,6 +9,11 @@ return {
         enabled = vim.fn.executable "make" == 1,
         build = "make",
       },
+      {
+        "jvgrootveld/telescope-zoxide",
+        lazy = true,
+        build = "make",
+      },
       "nvim-treesitter/nvim-treesitter",
       {
         "AstroNvim/astrocore",
