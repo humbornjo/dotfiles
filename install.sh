@@ -31,6 +31,7 @@ brew install pyenv
 brew install mackup
 brew install fastfetch
 brew install neovim
+brew install nvimpager
 brew install pgcli
 brew install tealdeer
 brew install wakatime-cli

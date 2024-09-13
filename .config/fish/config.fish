@@ -15,15 +15,15 @@ zoxide init fish | source # 'ajeetdsouza/zoxide'
 fnm --log-level quiet env --use-on-cd | source
 
 set -U fish_greeting # disable fish greeting
-set -U fish_key_bindings fish_vi_key_bindings
-# set -U LANG en_US.UTF-8
-# set -U LC_ALL en_US.UTF-8
+set -U fish_key_bindings fish_default_key_bindings
+set -U LANG en_US.UTF-8
+set -U LC_ALL en_US.UTF-8
 
-set -Ux BAT_THEME "Catppuccin-mocha" # 'sharkdp/bat' cat clone
 set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
-set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
-set -Ux PAGER "~/.local/bin/nvimpager" # 'lucc/nvimpager'
 set -Ux VISUAL "nvim"
+set -Ux PAGER "nvimpager" # 'lucc/nvimpager'
+set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
+set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 
 # personal config
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
@@ -51,10 +51,12 @@ fish_add_path $FVM_HOME/default/bin
 # pyenv: disable some unpleasent msg
 set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 
+# ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; 
+or set GHCUP_INSTALL_BASE_PREFIX $HOME; 
+set -gx PATH $HOME/.cabal/bin $PATH /Users/humborn/.ghcup/bin
+
 # tmux: graceful start
 if not set -q TMUX
     tmux
 end
-
-# ghcup 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /Users/humborn/.ghcup/bin # ghcup-env

@@ -1,4 +1,7 @@
-import = ["/Users/humborn/.config/alacritty/theme/gruvbox_material_hard_dark.toml"]
+import = [
+  "~/.config/alacritty/theme/gruvbox_material_hard_dark.toml"
+]
+
 live_config_reload = true
 
 [shell]
