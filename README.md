@@ -1,11 +1,12 @@
 # humbornjo's Dotfiles
 
 This is the home of all my dotfiles. 
-* ~~2023: Based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~~
-* 2024: Still based on [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect
+
+Heavily inspired by [joshmedeski's config](https://github.com/joshmedeski/dotfiles), respect~~
 
 ## New
-Fix some appearence issues, now ever'y thing is prettier!
+- Fix some appearence issues, now ever'y thing is prettier!
+- Don't you think gruvbox material color theme cool!
 
 ## Preview
 ![](./asset/exa.png)
@@ -13,10 +14,11 @@ Fix some appearence issues, now ever'y thing is prettier!
 ![](./asset/nvim.png)
 
 ## TODO
-- ABORTED: ~~From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)~~
+- [-] ~~From [fish](https://github.com/fish-shell/fish-shell) to [nushell](https://github.com/nushell/nushell)~~
   because fish is super cool and nushell is not as productive as they said.
-- DONE: ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
-- TODO: learn how to improve my workflow using dap and overseer.
+- [x] ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
+- [x] learn how to [improve my workflow](https://www.reddit.com/r/neovim/comments/w8n831/use_overseernvim_to_run_commands_on_save/) using dap and overseer.
+- [ ] clean my config, time to be a epic lua developer, baby.
 
 ## Software
 
