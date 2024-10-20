@@ -31,6 +31,15 @@ Heavily inspired by [joshmedeski's config](https://github.com/joshmedeski/dotfil
 - macOS package manager: [Homebrew](https://brew.sh)
 - npm package manager: [pnpm](https://pnpm.io/)
 
+## Help
+
+| mode   | binding | description                              | tip                   |
+|--------|---------|------------------------------------------|-----------------------|
+| insert | C-b     | move cursor to the start of preview word | b stand for backwards |
+| insert | C-n     | move cursor to the start of next word    | -                     |
+| insert | C-f     | move cursor to the start of current line | f stand for front     |
+| insert | C-r     | move cursor to the end of current line   | r stand for rear      |
+
 ## Hardware
 
 - Laptop: macbook air (14-inch, 2022, Apple M2 Chip, 16GB RAM)

@@ -3,11 +3,11 @@ return {
   event = "BufEnter",
   opts = {
     mappings = {
-      increment = "<A-w>",
-      decrement = "<A-s>",
+      increment = "<A-=>",
+      decrement = "<A-->",
       -- false
       -- no
-      -- 6
+      -- 8
     },
     additions = {
       { "prod",   "dev",     "test", "sandbox" },
