@@ -24,6 +24,7 @@ set -Ux VISUAL "nvim"
 set -Ux PAGER "nvimpager" # 'lucc/nvimpager'
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
+set -Ux KUBECONFIG "$HOME/.kube/config"
 
 # personal config
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin

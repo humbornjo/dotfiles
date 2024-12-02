@@ -1,10 +1,5 @@
-import = [
-  "~/.config/alacritty/theme/gruvbox_material_hard_dark.toml"
-]
 
-live_config_reload = true
-
-[shell]
+[terminal.shell]
 program = "/opt/homebrew/bin/fish"
 
 [env]
@@ -42,6 +37,18 @@ mods = "Command"
 [[keyboard.bindings]]
 chars = "\u0002%"
 key = "E"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = """
+:Grep
+"""
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002[/"
+key = "F"
 mods = "Command|Shift"
 
 [[keyboard.bindings]]
@@ -237,3 +244,12 @@ y = 20
 
 [colors.primary]
 background = "#1d2021"
+
+[general]
+
+live_config_reload = true
+import = [
+  "~/.config/alacritty/theme/gruvbox_material_hard_dark.toml"
+]
+
+[terminal]
