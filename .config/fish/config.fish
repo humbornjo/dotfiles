@@ -56,8 +56,3 @@ set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; 
 or set GHCUP_INSTALL_BASE_PREFIX $HOME; 
 set -gx PATH $HOME/.cabal/bin $PATH /Users/humborn/.ghcup/bin
-
-# tmux: graceful start
-if not set -q TMUX
-    tmux
-end

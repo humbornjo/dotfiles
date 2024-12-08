@@ -59,4 +59,4 @@ t.setup({
 t.load_extension('zoxide')
 
 -- Add a mapping
-vim.keymap.set("n", "Z", t.extensions.zoxide.list)
+vim.keymap.set("n", "zz", t.extensions.zoxide.list)
