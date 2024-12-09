@@ -1,8 +1,11 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-font_size 18.0
+font_size 17.0
 disable_ligatures never
-font_family "SF Mono"
+# font_family      family="Hack Nerd Font Mono"
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
 
 background #1d2021
 background_opacity 0.98
@@ -14,7 +17,9 @@ shell "/opt/homebrew/bin/fish"
 
 macos_option_as_alt yes
 
-map cmd+, send_text all \x02,
+map ctrl+a>r load_config_file
+
+map cmd+, send_text all \x04,
 map cmd+, send_text all \x02:
 map cmd+. send_text all \x1b\x20\x2e\x0a
 map cmd+1 send_text all \x021
@@ -51,4 +56,12 @@ map cmd+t send_text all \x02c
 map cmd+w send_text all \x02x
 map cmd+z send_text all \x02z
 
-include ./theme/gruvbox-material-dark-medium.conf
+include ./theme/gruvbox-material-dark-hard.conf
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Lilex"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

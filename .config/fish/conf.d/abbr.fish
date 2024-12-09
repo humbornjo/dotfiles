@@ -118,15 +118,14 @@ abbr sb "sam build"
 abbr sf "source ~/.config/fish/config.fish"
 abbr st "tmux source ~/.config/tmux/tmux.conf"
 
+abbr t "tmux"
 abbr ta "tmux a"
 abbr tat "tmux attach -t"
-abbr td "t dotfiles"
 abbr tk "tmux kill-server"
 abbr tks "tmux kill-server"
 abbr top htop
 abbr tr "tldr --list | fzf --header 'tldr (tealdeer)' --reverse --preview 'tldr {1} --color=always' --preview-window=right,80% | xargs tldr"
 abbr tn "tmux new -s (basename (pwd))"
-abbr tt "t -d pwd"
 
 abbr u "~/bin/update.sh"
 
