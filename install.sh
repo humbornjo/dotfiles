@@ -2,20 +2,19 @@
 cd ~ && mkdir Repository && cd Repository
 git clone git@github.com:humbornjo/dotfiles.git dotfiles
 
-git clone https://github.com/humbornjo/SF-Mono-Nerd-Font
-cd SF-Mono-Nerd-Font && cp ./SF* $USER/Library/Fonts/
+# font 
+brew install font-lilex-nerd-font
 
 brew install fish
-brew install thefuck                    # fuck is good
 brew install tmux
 brew install starship
 brew install zoxide
 
-brew install fd
+brew install tree
+brew install fd                         # sub for find
 brew install bat                        # sub for cat
 brew install eza                        # sub for ls
 brew install htop                       # sub for top
-brew install tree
 brew install ripgrep                    # sub for grep
 
 brew install fzf
