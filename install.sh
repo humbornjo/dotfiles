@@ -15,6 +15,7 @@ brew install fd                         # sub for find
 brew install bat                        # sub for cat
 brew install eza                        # sub for ls
 brew install htop                       # sub for top
+brew install procs                      # sub for ps
 brew install ripgrep                    # sub for grep
 
 brew install fzf
@@ -49,15 +50,17 @@ brew install lolcat
 brew install koekeishiya/formulae/skhd
 brew install koekeishiya/formulae/yabai
 
-brew install --cask alacritty
+
+brew install --cask kitty
 brew install --cask alfred
-brew install --cask obsidian
-brew install --cask spacelauncher
-brew install --cask karabiner-elements
 brew install --cask spotify
-brew install --cask wireshark
 brew install --cask vivaldi             # browser in chromium
 brew install --cask firefox             # you should install it anyhow
+brew install --cask obsidian
+brew install --cask wireshark
+brew install --cask alacritty
+brew install --cask spacelauncher
+brew install --cask karabiner-elements
 
 # AstroNvim
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -71,11 +74,12 @@ rm -rf ~/.config/nvim/.git
 nvim
 
 # fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+brew install fisher
+fisher install jorgebucaran/fisher
 fisher install edc/bass   # franciscolourenco/done
 
 # tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew install tpm
 tmux source ~/.tmux.conf
 
 
