@@ -4,10 +4,10 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    italics = true,    -- enable italics in general
+    italics = false,   -- enable italics in general
     contrast = "hard", -- set contrast, can be any of "hard", "medium", "soft"
     comments = {
-      italics = true,  -- enable italic comments
+      italics = false, -- enable italic comments
     },
     background = {
       transparent = true, -- set the background to transparent

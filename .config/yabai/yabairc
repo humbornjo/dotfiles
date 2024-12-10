@@ -60,6 +60,8 @@ yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^Clash" manage=off
 yabai -m rule --add app="^Karabiner" manage=off
 yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Slack$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
 
 yabai -m rule --add app="^WeCom$" manage=off
 yabai -m rule --add app="^NetEase" manage=off
