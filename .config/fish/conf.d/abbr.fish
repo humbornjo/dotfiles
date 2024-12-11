@@ -65,6 +65,7 @@ abbr gss "git status"
 
 abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
+abbr k kubectl
 abbr ka killall
 abbr kn "killall node"
 abbr kgp "kubectl get pods -A"

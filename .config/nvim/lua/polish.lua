@@ -62,6 +62,6 @@ t.load_extension('zoxide')
 --
 
 -- zoxide in nvim
-vim.keymap.set("n", "zz", t.extensions.zoxide.list)
+vim.keymap.set("n", "Z", t.extensions.zoxide.list)
 -- press Command+Z to toggle maximum panel in nvim
 vim.keymap.set("n", "\x02z", "<Plug>(zoom-toggle)")
