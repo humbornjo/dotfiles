@@ -58,16 +58,20 @@ abbr grao "git remote add origin"
 abbr grau "git remote add upstream"
 abbr grv "git remote -v"
 abbr gsb "git stash branch"
+abbr gsd "git stash drop"
 abbr gsh "git stash"
 abbr gsl "git stash list"
 abbr gsp "git stash pop"
 abbr gss "git status"
+abbr gsw "git switch"
 
 abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
 abbr k kubectl
+abbr kc kubectx
 abbr ka killall
 abbr kn "killall node"
+abbr kns kubens
 abbr kgp "kubectl get pods -A"
 abbr kgs "kubectl get services -A"
 abbr kaf "kubectl apply -f"
@@ -131,7 +135,7 @@ abbr tn "tmux new -s (basename (pwd))"
 
 abbr u "~/bin/update.sh"
 
-abbr v "nvim +GoToFile"
+abbr v "nvim ."
 abbr vfzf "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 100 --reverse --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
 abbr va "nvim ~/.config/alacritty/alacritty.toml"
 abbr vf "nvim ~/.config/fish/config.fish"
@@ -141,7 +145,6 @@ abbr vpc "nvim +PlugClean"
 abbr vpi "nvim +PlugInstall"
 abbr vpu "nvim +PlugUpdate"
 abbr vpug "nvim +PlugUpgrade"
-abbr vt "nvim ~/.config/tmux/tmux.conf"
 
 abbr y yarn
 abbr ya "yarn add"
