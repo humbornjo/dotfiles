@@ -67,5 +67,6 @@ yabai -m rule --add app="^WeCom$" manage=off
 yabai -m rule --add app="^NetEase" manage=off
 yabai -m rule --add app="^Fei" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^Oxygen" manage=off
 
 echo "yabai configuration loaded.."
