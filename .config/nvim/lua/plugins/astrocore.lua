@@ -54,6 +54,8 @@ return {
         --   desc = "Previous buffer",
         -- },
 
+        -- press Command+Z to toggle maximum panel in nvim
+        ["\x02z"] = { "<Plug>(zoom-toggle)" },
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
           function()
