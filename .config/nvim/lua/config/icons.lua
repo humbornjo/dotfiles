@@ -40,6 +40,7 @@ local M = {
   Paste = "󰅌",
   Search = "",
   Selected = "", -- 
+  SelectedItem = "󱞪",
   Spellcheck = "󰓆",
   TabClose = "󰅙",
 }

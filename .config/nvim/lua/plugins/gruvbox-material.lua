@@ -4,7 +4,7 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    italics = false,   -- enable italics in general
+    italics = true,    -- enable italics in general
     contrast = "hard", -- set contrast, can be any of "hard", "medium", "soft"
     comments = {
       italics = false, -- enable italic comments
@@ -13,8 +13,8 @@ return {
       transparent = true, -- set the background to transparent
     },
     float = {
-      force_background = true, -- force background on floats even when background.transparent is set
-      background_color = nil,  -- set color for float backgrounds. If nil, uses the default color set
+      force_background = false, -- force background on floats even when background.transparent is set
+      background_color = nil,   -- set color for float backgrounds. If nil, uses the default color set
       -- by the color scheme
     },
     signs = {
