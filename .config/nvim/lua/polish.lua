@@ -14,3 +14,5 @@ vim.filetype.add {
     ["~/%.config/foo/.*"] = "fooscript",
   },
 }
+
+vim.g.rust_recommended_style = false
