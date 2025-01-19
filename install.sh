@@ -79,7 +79,7 @@ fisher install jorgebucaran/fisher
 fisher install edc/bass   # franciscolourenco/done
 
 # tpm
-brew install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 
 
