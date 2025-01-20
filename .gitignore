@@ -64,3 +64,5 @@ pids
 run
 .config/fish/conf.d/openai.fish
 .config/fish/conf.d/nu.fish
+.config/fish/temp
+.config/git/config
