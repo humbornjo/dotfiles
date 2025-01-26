@@ -8,7 +8,10 @@ return {
   ---@class NoiceConfig
   opts = {
     ---@type NoicePresets
-    presets = { inc_rename = true },
+    presets = {
+      inc_rename = true,
+      lsp_doc_border = true, -- add a border to hover docs and signature help
+    },
     ---@type NoiceConfigViews
     views = {
       cmdline_popup = {
