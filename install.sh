@@ -1,66 +1,67 @@
 # Do the following two line first
-cd ~ && mkdir Repository && cd Repository
-git clone git@github.com:humbornjo/dotfiles.git dotfiles
+cd ~ && git clone git@github.com:humbornjo/dotfiles.git
+
 
 # font 
-brew install font-lilex-nerd-font
+# pacman -S font-lilex-nerd-font
 
-brew install fish
-brew install tmux
-brew install starship
-brew install zoxide
+pacman -S fish
+pacman -S tmux
+pacman -S starship
+pacman -S zoxide
 
-brew install tree
-brew install fd                         # sub for find
-brew install bat                        # sub for cat
-brew install eza                        # sub for ls
-brew install htop                       # sub for top
-brew install procs                      # sub for ps
-brew install ripgrep                    # sub for grep
+pacman -S tree
+pacman -S fd                         # sub for find
+pacman -S bat                        # sub for cat
+pacman -S eza                        # sub for ls
+pacman -S htop                       # sub for top
+pacman -S procs                      # sub for ps
+pacman -S ripgrep                    # sub for grep
 
-brew install fzf
-brew install gh
-brew install git
-brew install git-delta
-brew install lazygit                    
-brew install lazydocker                 
-brew install yazi                       # terminal file manager
-brew install fnm                        # node version manager
-brew install lsd
-brew install pyenv
-brew install mackup
-brew install fastfetch
-brew install neovim
-brew install nvimpager
-brew install pgcli
-brew install tealdeer
-brew install wakatime-cli
+pacman -S fzf
+pacman -S git
+pacman -S git-delta
+pacman -S lazygit                    
+pacman -S yazi                       # terminal file manager
+pacman -S lsd
+pacman -S pyenv
+pacman -S mackup
+pacman -S fastfetch
+pacman -S neovim
+pacman -S pgcli
+pacman -S tealdeer
+pacman -S wakatime
 
-brew tap clementtsang/bottom
-brew install bottom
+pacman -S kitty-terminfo # https://sw.kovidgoyal.net/kitty/faq/
 
-brew tap arl/arl
-brew install gitmux
-
-brew install cowsay
-brew install fortune
-brew install lolcat
-
-
-brew install koekeishiya/formulae/skhd
-brew install koekeishiya/formulae/yabai
+# brew tap clementtsang/bottom
+# pacman -S bottom
+#
+# brew tap arl/arl
+# pacman -S gitmux
+#
+# pacman -S cowsay
+# pacman -S fortune
+# pacman -S lolcat
+#
+#
+# pacman -S koekeishiya/formulae/skhd
+# pacman -S koekeishiya/formulae/yabai
 
 
-brew install --cask kitty
-brew install --cask alfred
-brew install --cask spotify
-brew install --cask vivaldi             # browser in chromium
-brew install --cask firefox             # you should install it anyhow
-brew install --cask obsidian
-brew install --cask wireshark
-brew install --cask alacritty
-brew install --cask spacelauncher
-brew install --cask karabiner-elements
+# pacman -S --cask kitty
+# pacman -S --cask alfred
+# pacman -S --cask spotify
+# pacman -S --cask vivaldi             # browser in chromium
+# pacman -S --cask firefox             # you should install it anyhow
+# pacman -S --cask obsidian
+# pacman -S --cask wireshark
+# pacman -S --cask alacritty
+# pacman -S --cask spacelauncher
+# pacman -S --cask karabiner-elements
+
+# fnm 
+curl -fsSL https://fnm.vercel.app/install | bash
 
 # AstroNvim
 mv ~/.config/nvim ~/.config/nvim.bak
@@ -74,7 +75,7 @@ rm -rf ~/.config/nvim/.git
 nvim
 
 # fisher
-brew install fisher
+pacman -S fisher
 fisher install jorgebucaran/fisher
 fisher install edc/bass   # franciscolourenco/done
 
@@ -82,5 +83,6 @@ fisher install edc/bass   # franciscolourenco/done
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
 
-
+# finally, import all the config using stow
+pacman -S stow && cd dotfiles && stow .
 

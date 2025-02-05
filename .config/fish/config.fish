@@ -8,10 +8,9 @@
 # A smart and user-friendly command line
 # https://fishshell.com/
 
-eval (/opt/homebrew/bin/brew shellenv)
-eval "$(pyenv init -)"
-starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
+pyenv init - fish | source
+starship init fish | source # https://starship.rs/
 fnm --log-level quiet env --use-on-cd | source
 
 set -U fish_greeting # disable fish greeting
@@ -22,6 +21,7 @@ set -U LC_ALL en_US.UTF-8
 set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
 set -Ux VISUAL "nvim"
 set -Ux PAGER "nvimpager" # 'lucc/nvimpager'
+set -Ux FNM_PATH "/home/humborn/.local/share/fnm"
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux KUBECONFIG "$HOME/.kube/config"

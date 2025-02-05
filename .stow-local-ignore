@@ -1,0 +1,7 @@
+install.sh
+asset
+\.mackup\.cfg
+\.mackup
+^README\.md$
+\.gitignore
+\.docker
