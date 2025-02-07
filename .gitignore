@@ -60,9 +60,13 @@ Library/Preferences/us.zoom.ZoomAutoUpdater.plist
 Library/Preferences/ZoomChat.plist
 logs
 npm-debug.log
+noice.log
+.boto
 pids
 run
 .config/fish/conf.d/openai.fish
 .config/fish/conf.d/nu.fish
 .config/fish/temp
 .config/git/config
+.config/tmux/plugins/
+.kube/
