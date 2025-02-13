@@ -11,7 +11,7 @@ return {
         TRACE = "✎",
         WARN = ""
       },
-      level = 2,
+      level = 3,
       render = "default",
       stages = "fade_in_slide_out",
       time_formats = {
