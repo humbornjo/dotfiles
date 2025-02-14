@@ -79,7 +79,7 @@ abbr kaf "kubectl apply -f"
 abbr ls eza
 abbr ll "eza -al"
 abbr lt "eza -T"
-abbr ld lazydocker
+abbr ldk lazydocker
 abbr lg lazygit
 
 abbr nb "npm run build"
