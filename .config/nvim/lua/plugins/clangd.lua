@@ -5,6 +5,7 @@ return {
     opts = {
       config = {
         clangd = {
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp", "h" },
           capabilities = {
             offsetEncoding = "utf-8",
           },
