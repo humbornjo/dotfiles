@@ -9,22 +9,22 @@
 # https://fishshell.com/
 
 eval (/opt/homebrew/bin/brew shellenv)
-eval "$(pyenv init -)"
+pyenv    init - fish | source
+zoxide   init fish | source # 'ajeetdsouza/zoxide'
 starship init fish | source # https://starship.rs/
-zoxide init fish | source # 'ajeetdsouza/zoxide'
-fnm --log-level quiet env --use-on-cd | source
 
 set -U fish_greeting # disable fish greeting
 set -U fish_key_bindings fish_vi_key_bindings
 set -U LANG en_US.UTF-8
 set -U LC_ALL en_US.UTF-8
 
+set -Ux SHELL "bash"
 set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
 set -Ux VISUAL "nvim"
 set -Ux PAGER "nvimpager" # 'lucc/nvimpager'
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
-set -Ux KUBECONFIG "$HOME/.kube/config"
+set -Ux KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-ms"
 
 # personal config
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
@@ -39,6 +39,9 @@ set -Ux CARGO_HOME "$HOME/.cargo"
 set -Ux RUSTUP_HOME "$HOME/.rustup"
 fish_add_path $CARGO_HOME/bin
 
+# fnm 
+fnm --log-level quiet env --use-on-cd | source
+
 # pnpm
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
@@ -51,6 +54,8 @@ fish_add_path $FVM_HOME/default/bin
 
 # pyenv: disable some unpleasent msg
 set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
 
 # ghcup-env
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; 
