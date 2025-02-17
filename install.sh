@@ -46,10 +46,10 @@ brew install cowsay
 brew install fortune
 brew install lolcat
 
+brew tap espanso/espanso
+brew install espanso
 
-brew install koekeishiya/formulae/skhd
-brew install koekeishiya/formulae/yabai
-
+brew install --cask nikitabobko/tap/aerospace
 
 brew install --cask kitty
 brew install --cask alfred
