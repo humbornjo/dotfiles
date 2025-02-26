@@ -35,6 +35,9 @@ alt-shift-j = 'focus down'
 alt-shift-k = 'focus up'
 alt-shift-l = 'focus right'
 
+alt-shift-f = 'fullscreen'
+alt-shift-g = 'layout floating tiling'
+
 # TODO: is this helpful? How does it work?
 # alt-shift-n = 'split opposite'
 alt-shift-minus = 'resize smart -100'
