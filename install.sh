@@ -49,6 +49,8 @@ brew install lolcat
 brew tap espanso/espanso
 brew install espanso
 
+brew install spicetify-cli
+
 brew install --cask nikitabobko/tap/aerospace
 
 brew install --cask kitty
