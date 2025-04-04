@@ -23,6 +23,7 @@ abbr dcdv "docker compose down -v"
 abbr dcr "docker compose restart"
 abbr dcu "docker compose up -d"
 abbr dps "docker ps --format 'table {{.Names}}\t{{.Status}}'"
+abbr dlvl "dlv debug --headless --listen=127.0.0.1:38697"
 
 abbr e exit
 abbr ee "espanso edit"

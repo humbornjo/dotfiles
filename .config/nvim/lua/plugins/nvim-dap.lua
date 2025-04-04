@@ -7,6 +7,7 @@ return {
       command = '/opt/homebrew/opt/llvm/bin/lldb-vscode', -- adjust as needed, must be absolute path
       name = 'lldb'
     }
+    dap.configurations.go = {}
     dap.configurations.cpp = {
       {
         name = 'Launch',
