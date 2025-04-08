@@ -10,6 +10,7 @@ brew install tmux
 brew install starship
 brew install zoxide
 
+brew install wget
 brew install tree
 brew install fd                         # sub for find
 brew install bat                        # sub for cat
@@ -49,10 +50,10 @@ brew install lolcat
 brew tap espanso/espanso
 brew install espanso
 
-brew install spicetify-cli
-
 brew install --cask nikitabobko/tap/aerospace
 
+brew install --cask slack
+brew install --cask orbstack
 brew install --cask kitty
 brew install --cask alfred
 brew install --cask spotify
@@ -61,7 +62,6 @@ brew install --cask firefox             # you should install it anyhow
 brew install --cask obsidian
 brew install --cask wireshark
 brew install --cask alacritty
-brew install --cask spacelauncher
 brew install --cask karabiner-elements
 
 # AstroNvim

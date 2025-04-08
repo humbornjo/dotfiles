@@ -45,18 +45,20 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs with `H` and `L`
-        -- L = {
-        --   function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-        --   desc = "Next buffer",
-        -- },
-        -- H = {
-        --   function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-        --   desc = "Previous buffer",
-        -- },
+        L              = {
+          function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+          desc = "Next buffer",
+        },
+        H              = {
+          function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+          desc = "Previous buffer",
+        },
 
         -- press Command+Z to toggle maximum panel in nvim
-        ["\x02z"] = { "<Plug>(zoom-toggle)" },
+        ["\x02z"]      = { "<Plug>(zoom-toggle)" },
+
         -- mappings seen under group name "Buffer"
+        ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "new tab" },
         ["<Leader>bD"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
@@ -67,21 +69,42 @@ return {
         },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
+        ["<leader>b"]  = { name = "buffers", desc = " Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<A-Up>"]     = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
+        ["<A-Down>"]   = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
+        ["<A-Left>"]   = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
+        ["<A-Right>"]  = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
+
+        ["ga"]         = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
+      },
+      x = {
+        -- vim-easyalign
+        ["ga"] = { "<Plug>(EasyAlign)", desc = "vim-easy-align" },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"]  false,
       },
       i = {
-        ["<A-b>"] = { "<C-o>db" },
-        ["<A-n>"] = { "<C-o>dw" },
-        ["<C-b>"] = { "<C-o>b" },
-        ["<C-n>"] = { "<C-o>w" },
-        ["<C-f>"] = { "<C-o>I" },
-        ["<C-r>"] = { "<C-o>A" },
+        -- jump by word
+        ["<C-j>"] = { "<Down>" },
+        ["<C-k>"] = { "<Up>" },
+        ["<C-h>"] = { "<C-o>b" },
+        ["<C-l>"] = { "<C-o>w" },
+
+        -- once upon a time
+        ["<C-e>"] = { "<C-o>A" },
+        ["<C-a>"] = { "<C-o>I" },
+
+        -- delete by word
+        ["<C-w>"] = { "<C-w>" },
+        ["<C-s>"] = { "<C-o>dw" },
+
+        -- delete by letter
+        ["<A-w>"] = { "<BS>" },
+        ["<A-s>"] = { "<Del>" },
       }
     },
   },

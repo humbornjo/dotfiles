@@ -8,6 +8,7 @@ return {
         -- add custom handler
         rust_analyzer = function(_, opts)
           require("rust-tools").setup({ server = opts })
+          vim.g.rust_recommended_style = false
         end,
       },
     },
