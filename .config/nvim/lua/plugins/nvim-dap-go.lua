@@ -1,7 +1,7 @@
 return {
   "leoluz/nvim-dap-go",
   config = function()
-    require('dap-go').setup {
+    require("dap-go").setup({
       dap_configurations = {
         {
           type = "go",
@@ -12,9 +12,9 @@ return {
       },
       delve = {
         path = "dlv",
-        port = '38697',
-        host = 'localhost',
+        port = "38697",
+        host = "localhost",
       },
-    }
-  end
+    })
+  end,
 }

@@ -3,9 +3,6 @@
 .aws/
 .azure
 .basement
-.config/fish/fish_variables
-.config/fish/functions/fzf_key_bindings.fish
-.config/karabiner/
 .DS_Store
 .ipython/
 .jupyter/
@@ -66,3 +63,7 @@ run
 .config/fish/conf.d/nu.fish
 .config/fish/temp
 .config/git/config
+.config/tmux/plugins/
+.config/fish/fish_variables
+.config/karabiner/*
+!.config/karabiner/karabiner.json
