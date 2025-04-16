@@ -1,11 +1,29 @@
 return {
-  "DreamMaoMao/yazi.nvim",
+  "mikavilpas/yazi.nvim",
+  event = "VeryLazy",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
-    "nvim-lua/plenary.nvim",
+    -- check the installation instructions at
+    -- https://github.com/folke/snacks.nvim
+    "folke/snacks.nvim",
   },
-
   keys = {
-    { "<leader>y", "<cmd>Yazi<CR>", desc = "Toggle yazi" },
+    -- 👇 in this section, choose your own keymappings!
+    {
+      "<leader>yy",
+      mode = { "n", "v" },
+      "<cmd>Yazi<cr>",
+      desc = "Open yazi at the current file",
+    },
+    {
+      -- Open in the current working directory
+      "<leader>yw",
+      "<cmd>Yazi cwd<cr>",
+      desc = "Open the file manager in nvim's working directory",
+    },
+    {
+      "<leader>yl",
+      "<cmd>Yazi toggle<cr>",
+      desc = "Resume the last yazi session",
+    },
   },
 }

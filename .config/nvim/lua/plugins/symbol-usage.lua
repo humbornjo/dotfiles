@@ -83,8 +83,8 @@ local common_kinds = {
 }
 
 return {
-  'Wansmer/symbol-usage.nvim',
-  event = 'LspAttach', -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
+  "Wansmer/symbol-usage.nvim",
+  event = "LspAttach", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
   priority = 1000,
   enabled = false,
   ---@type UserOpts
@@ -99,7 +99,7 @@ return {
     vim.api.nvim_set_hl(0, "SymbolUsageRef", { fg = h("Function").fg, bg = h("CursorLine").bg, italic = true })
     vim.api.nvim_set_hl(0, "SymbolUsageDef", { fg = h("Type").fg, bg = h("CursorLine").bg, italic = true })
     vim.api.nvim_set_hl(0, "SymbolUsageImpl", { fg = h("@keyword").fg, bg = h("CursorLine").bg, italic = true })
-    require("symbol-usage").setup {
+    require("symbol-usage").setup({
       text_format = text_format,
       vt_position = "end_of_line",
       request_pending_text = " ...",
@@ -115,9 +115,12 @@ return {
           kinds = vim.list_extend({ SymbolKind.Constant }, common_kinds),
         },
         rust = {
-          kinds = vim.list_extend({ SymbolKind.Constant, SymbolKind.Enum, SymbolKind.EnumMember }, common_kinds),
+          kinds = vim.list_extend(
+            { SymbolKind.Constant, SymbolKind.Enum, SymbolKind.EnumMember },
+            common_kinds
+          ),
         },
       },
-    }
-  end
+    })
+  end,
 }

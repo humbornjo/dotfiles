@@ -1,14 +1,12 @@
 return {
   "rachartier/tiny-glimmer.nvim",
-  event = "TextYankPost",
+  event = "VeryLazy",
+  priority = 10, -- Needs to be a really low priority, to catch others plugins keybindings.
   config = function()
-    local config = vim.fn['gruvbox_material#get_configuration']()
-    local palette = vim.fn['gruvbox_material#get_palette'](
-      config.background,
-      config.foreground,
-      config.colors_override
-    )
-    require('tiny-glimmer').setup({
+    local config = vim.fn["gruvbox_material#get_configuration"]()
+    local palette =
+        vim.fn["gruvbox_material#get_palette"](config.background, config.foreground, config.colors_override)
+    require("tiny-glimmer").setup({
       enabled = true,
       default_animation = "pulse",
       refresh_interval_ms = 6,
@@ -18,12 +16,6 @@ return {
 
       transparency_color = palette.bg0[1],
       animations = {
-        fade = {
-          max_duration = 300,
-          min_duration = 200,
-          chars_for_max_duration = 10,
-          color = hl_visual_bg,
-        },
         bounce = {
           max_duration = 500,
           min_duration = 400,
@@ -47,21 +39,6 @@ return {
           max_duration = 600,
           min_duration = 350,
           chars_for_max_duration = 20,
-        },
-        custom = {
-          max_duration = 350,
-          chars_for_max_duration = 40,
-          color = hl_visual_bg,
-
-          -- Custom effect function
-          -- @param self table The effect object
-          -- @param progress number The progress of the animation [0, 1]
-          --
-          -- Should return a color and a progress value
-          -- that represents how much of the animation should be drawn
-          effect = function(self, progress)
-            return self.settings.color, progress
-          end,
         },
       },
       virt_text = {

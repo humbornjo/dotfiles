@@ -15,9 +15,6 @@ abbr bs "brew search"
 
 abbr c clear
 abbr cat bat
-abbr cl clear
-abbr claer clear
-abbr clera clear
 abbr cx "chmod +x"
 
 abbr dc "docker compose"
@@ -69,10 +66,13 @@ abbr gsw "git switch"
 abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
 abbr k kubectl
-abbr kc kubectx
 abbr ka killall
+abbr kc kubectx
+abbr kdl "kubectl delete"
+abbr kds "kubectl describe"
 abbr kn "killall node"
 abbr kns kubens
+abbr kg "kubectl get"
 abbr kgp "kubectl get pods -A"
 abbr kgs "kubectl get services -A"
 abbr kaf "kubectl apply -f"
@@ -80,7 +80,7 @@ abbr kaf "kubectl apply -f"
 abbr ls eza
 abbr ll "eza -al"
 abbr lt "eza -T"
-abbr ld lazydocker
+abbr ldk lazydocker
 abbr lg lazygit
 
 abbr nb "npm run build"
@@ -134,9 +134,8 @@ abbr top htop
 abbr tr "tldr --list | fzf --header 'tldr (tealdeer)' --reverse --preview 'tldr {1} --color=always' --preview-window=right,80% | xargs tldr"
 abbr tn "tmux new -s (basename (pwd))"
 
-abbr u "~/bin/update.sh"
 
-abbr v "nvim"
+abbr vi "nvim"
 abbr vfzf "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 100 --reverse --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
 abbr va "nvim ~/.config/alacritty/alacritty.toml"
 abbr vf "nvim ~/.config/fish/config.fish"
