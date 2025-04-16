@@ -3,20 +3,20 @@ return {
   config = function()
     local dap = require("dap")
     dap.adapters.lldb = {
-      type = 'executable',
-      command = '/opt/homebrew/opt/llvm/bin/lldb-vscode', -- adjust as needed, must be absolute path
-      name = 'lldb'
+      type = "executable",
+      command = "/opt/homebrew/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
+      name = "lldb",
     }
     dap.configurations.go = {}
     dap.configurations.cpp = {
       {
-        name = 'Launch',
-        type = 'lldb',
-        request = 'launch',
+        name = "Launch",
+        type = "lldb",
+        request = "launch",
         program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         end,
-        cwd = '${workspaceFolder}',
+        cwd = "${workspaceFolder}",
         stopOnEntry = false,
         args = {},
 

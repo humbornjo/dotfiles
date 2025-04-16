@@ -13,9 +13,9 @@ return {
     },
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = { }, -- automatically install lsp
+      ensure_installed = { "typescript-language-server" }, -- automatically install lsp
     },
   },
 }
