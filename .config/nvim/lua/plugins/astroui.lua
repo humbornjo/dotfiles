@@ -25,38 +25,40 @@ return {
         -- return a table of highlights for telescope based on
         -- colors gotten from highlight groups
         return {
-          Normal = { bg = nil, fg = palette.fg0[1] },
-          NormalFloat = { bg = nil, fg = palette.fg0[1] },
-          FoldColumn = { bg = nil, fg = palette.grey0[1] },
-          SignColumn = { bg = nil },
-          EndOfBuffer = { bg = nil, fg = palette.grey0[1] },
-          FloatBorder = { bg = nil },
-          FloatTitle = { bg = nil, fg = palette.orange[1] },
-
-          Visual = { bg = palette.bg3[1] },
           ColorColumn = { bg = palette.bg1[1] },
-
-          GitSignsAdd = { bg = nil, fg = palette.green[1] },
-          GitSignsChange = { bg = nil, fg = palette.yellow[1] },
-          GitSignsDelete = { bg = nil, fg = palette.red[1] },
-
-          DiffAdd = { bg = nil, fg = palette.green[1] },
-          DiffChange = { bg = nil, fg = palette.yellow[1] },
-          DiffDelete = { bg = nil, fg = palette.red[1] },
-          DiffText = { bg = nil, fg = palette.blue[1] },
-
-          LspInfoBorder = { bg = nil, fg = palette.fg0[1] },
-          DiagnosticSignWarn = { bg = nil, fg = palette.yellow[1] },
-
-          ErrorMsg = { fg = palette.red[1] },
-
           CursorLine = { bg = palette.bg_current_word[1] },
           CurrentWord = { bg = palette.bg_current_word[1] },
-
-          -- MatchParen = { bg = palette.grey2[1], fg = palette.bg0[1] },
+          ErrorMsg = { fg = palette.red[1] },
+          Visual = { bg = palette.bg3[1] },
         }
       end,
     },
+    status = {
+      colors = function(hl)
+        local get_hlgroup = require("astroui").get_hlgroup
+        -- use helper function to get highlight group properties
+        local comment_fg = get_hlgroup("Comment").fg
+        hl.git_branch_fg = comment_fg
+        hl.git_added = comment_fg
+        hl.git_changed = comment_fg
+        hl.git_removed = comment_fg
+        hl.blank_bg = get_hlgroup("Folded").fg
+        hl.file_info_bg = get_hlgroup("Visual").bg
+        hl.nav_icon_bg = get_hlgroup("String").fg
+        hl.nav_fg = hl.nav_icon_bg
+        hl.folder_icon_bg = get_hlgroup("Error").fg
+        return hl
+      end,
+      separators = {
+        left = { "", "" }, -- separator for the left side of the statusline
+        right = { " ", "" }, -- separator for the right side of the statusline
+        -- tab = { "", "" },
+        path = "  ",
+        breadcrumbs = "  ",
+      },
+      attributes = { mode = { bold = true }, },
+      icon_highlights = { file_icon = { statusline = false, }, },
+    }
   },
 }
 
