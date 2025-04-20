@@ -146,4 +146,15 @@ return {
 			)
 		end,
 	},
+
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		config = function(_, opts)
+			opts.source_selector = {
+				winbar = false,
+				statusline = false
+			}
+			require("neo-tree").setup(opts)
+		end
+	}
 }
