@@ -82,6 +82,26 @@ return {
 					{ section = "startup" },
 				},
 			},
+			lazygit = {
+				-- automatically configure lazygit to use the current colorscheme
+				-- and integrate edit with the current neovim instance
+				configure = true,
+				-- extra configuration for lazygit that will be merged with the default
+				-- snacks does NOT have a full yaml parser, so if you need `"test"` to appear with the quotes
+				-- you need to double quote it: `"\"test\""`
+				config = {
+					os = {
+						edit =
+						'if not set? NVIM; and nvim -- {{filename}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{filename}}; end',
+						editAtLine =
+						'if not set? NVIM; and nvim +{{line}} -- {{filename}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{filename}}; and nvim --server "$NVIM" --remote-send ":{{line}}<CR>"; end',
+						editAtLineAndWait = "nvim +{{line}} {{filename}}",
+						editInTerminal = true,
+						openDirInEditor =
+						'if not set? NVIM; and nvim -- {{dir}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{dir}}; end'
+					},
+				},
+			}
 		},
 	},
 
