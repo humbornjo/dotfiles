@@ -30,23 +30,23 @@ return {
 
     require("incline").setup({
       hide = {
+        only_win = false,
         cursorline = true,
         focused_win = false,
-        only_win = false,
       },
       window = {
         padding = 0,
         margin = { horizontal = 0 },
         placement = {
-          horizontal = "right",
           vertical = "top",
+          horizontal = "right",
         },
       },
       render = function(props)
-        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-        local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
-        local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
         local helpers = require("incline.helpers")
+        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+        local modified = vim.bo[props.buf].modified and "bold,italic" or "bold"
+        local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
 
         local buffer = {
           ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) }
