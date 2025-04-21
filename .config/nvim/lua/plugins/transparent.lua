@@ -13,11 +13,10 @@ return {
       },
       -- table: additional groups that should be cleared
       extra_groups = {
-        'NormalFloat', 'FoldColumn', 'SignColumn', 'EndOfBuffer',
         'FloatBorder', 'FloatTitle',
-        'GitSignsAdd', 'GitSignsChange', 'GitSignsDelete',
-        'DiffAdd', 'DiffChange', 'DiffDelete', 'DiffText',
+        'NormalFloat', 'FoldColumn',
         'LspInfoBorder', 'DiagnosticSignWarn',
+        'GitSignsAdd', 'GitSignsChange', 'GitSignsDelete',
         'TabLineSel', 'TabLine', 'TabLineFill', 'WinBar', 'WinBarNC',
         'NeoTreeNormal', 'NeoTreeNormalNC', 'NeoTreePreview', 'NeoTreeTabInactive',
       },
