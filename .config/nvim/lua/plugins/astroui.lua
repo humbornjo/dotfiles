@@ -30,6 +30,7 @@ return {
           CurrentWord = { bg = palette.bg_current_word[1] },
           ErrorMsg = { fg = palette.red[1] },
           Visual = { bg = palette.bg3[1] },
+          DeadColumnNormal = { fg = palette.fg1[1], bg = "#ebdbb2" },
         }
       end,
     },
@@ -52,11 +53,13 @@ return {
       separators = {
         left = { "", "" }, -- separator for the left side of the statusline
         right = { " ", "" }, -- separator for the right side of the statusline
-        -- tab = { "", "" },
         path = "  ",
         breadcrumbs = "  ",
       },
-      attributes = { mode = { bold = true }, },
+      attributes = {
+        mode = { bold = true },
+        buffer_active = { bold = true, italic = false },
+      },
       icon_highlights = { file_icon = { statusline = false, }, },
     }
   },

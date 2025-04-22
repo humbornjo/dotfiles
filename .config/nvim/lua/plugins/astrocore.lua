@@ -58,18 +58,6 @@ return {
 				-- press Command+Z to toggle maximum panel in nvim
 				["\x02z"] = { "<Plug>(zoom-toggle)" },
 
-				-- toggle colorcolumn
-				["<Leader>be"] = {
-					function()
-						if vim.o.colorcolumn ~= "" then
-							vim.o.colorcolumn = ""
-						else
-							vim.o.colorcolumn = "80"
-						end
-					end,
-					desc = "Toggle colorcolumn",
-				},
-
 				-- mappings seen under group name "Buffer"
 				["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "new tab" },
 				["<Leader>bD"] = {
