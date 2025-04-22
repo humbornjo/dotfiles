@@ -98,7 +98,7 @@ return {
 						editAtLineAndWait = "nvim +{{line}} {{filename}}",
 						editInTerminal = true,
 						openDirInEditor =
-						'if not set? NVIM; and nvim -- {{dir}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{dir}}; end'
+						'if not set? NVIM; and nvim -- {{di}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{dir}}; end '
 					},
 				},
 			}
@@ -115,6 +115,7 @@ return {
 			require("astronvim.plugins.configs.luasnip")(plugin, opts) -- include the default astronvim config that calls the setup call
 			-- add more custom luasnip configuration such as filetype extend or custom snippets
 			local luasnip = require("luasnip")
+			luasnip.filetype_extend("dart", { "flutter" })
 			luasnip.filetype_extend("javascript", { "javascriptreact" })
 		end,
 	},
@@ -156,5 +157,5 @@ return {
 			}
 			require("neo-tree").setup(opts)
 		end
-	}
+	},
 }
