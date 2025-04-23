@@ -4,17 +4,11 @@
 
 ---@type LazySpec
 return {
-
-	-- == Examples of Adding Plugins ==
-
-	"andweeb/presence.nvim",
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
 		config = function() require("lsp_signature").setup() end,
 	},
-
-	-- == Examples of Overriding Plugins ==
 
 	-- customize dashboard options
 	{
@@ -91,14 +85,27 @@ return {
 				-- you need to double quote it: `"\"test\""`
 				config = {
 					os = {
-						edit =
-						'if not set? NVIM; and nvim -- {{filename}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{filename}}; end',
-						editAtLine =
-						'if not set? NVIM; and nvim +{{line}} -- {{filename}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{filename}}; and nvim --server "$NVIM" --remote-send ":{{line}}<CR>"; end',
+						edit = 'if not set -q NVIM;' ..
+								'and nvim -- {{filename}};' ..
+								'else;' ..
+								'nvim --server $NVIM --remote-send "q";' ..
+								'and nvim --server $NVIM --remote-tab {{filename}};' ..
+								'end',
+						editAtLine = 'if not set -q NVIM;' ..
+								'and nvim +{{line}} -- {{filename}};' ..
+								'else;' ..
+								'nvim --server $NVIM --remote-send "q";' ..
+								'and nvim --server $NVIM --remote-tab {{filename}};' ..
+								'and nvim --server $NVIM --remote-send ":{{line}}<CR>";' ..
+								'end',
 						editAtLineAndWait = "nvim +{{line}} {{filename}}",
 						editInTerminal = true,
-						openDirInEditor =
-						'if not set? NVIM; and nvim -- {{di}}; else; nvim --server "$NVIM" --remote-send "q"; and nvim --server "$NVIM" --remote-tab {{dir}}; end '
+						openDirInEditor = 'if not set -q NVIM;' ..
+								'and nvim -- {{dir}};' ..
+								'else;' ..
+								'nvim --server $NVIM --remote-send "q";' ..
+								'and nvim --server $NVIM --remote-tab {{dir}};' ..
+								'end'
 					},
 				},
 			}
