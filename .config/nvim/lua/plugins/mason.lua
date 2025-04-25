@@ -18,6 +18,7 @@ return {
 				"lua-language-server",
 				"yaml-language-server",
 				"astro-language-server",
+				"dockerfile-language-server",
 
 				-- install formatters
 				"black",
