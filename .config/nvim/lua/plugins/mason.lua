@@ -21,6 +21,9 @@ return {
 				"astro-language-server",
 				"dockerfile-language-server",
 
+				-- install linters
+				"golangci-lint",
+
 				-- install formatters
 				"black",
 				"stylua",
@@ -36,4 +39,9 @@ return {
 			},
 		},
 	},
+	{
+		"mfussenegger/nvim-lint",
+		dependencies = { "williamboman/mason.nvim", },
+		linters_by_ft = { go = { "golangcilint" }, },
+	}
 }
