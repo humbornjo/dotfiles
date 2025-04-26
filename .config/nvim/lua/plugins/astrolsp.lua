@@ -6,6 +6,7 @@
 ---@type LazySpec
 return {
 	"AstroNvim/astrolsp",
+	dependencies = { "williamboman/mason.nvim" },
 	---@type AstroLSPOpts
 	opts = {
 		-- Configuration table of features provided by AstroLSP

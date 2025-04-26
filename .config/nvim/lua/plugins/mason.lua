@@ -16,6 +16,7 @@ return {
 				"pyright",
 				"rust-analyzer",
 				"lua-language-server",
+				"vue-language-server",
 				"yaml-language-server",
 				"astro-language-server",
 				"dockerfile-language-server",
