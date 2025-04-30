@@ -56,6 +56,8 @@ return {
       -- fill the rest of the statusline
       -- the elements after this will appear on the right of the statusline
       status.component.fill(),
+      -- add a component to display tree-sitter
+      status.component.treesitter(),
       -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
       status.component.lsp({
         lsp_progress = false,
