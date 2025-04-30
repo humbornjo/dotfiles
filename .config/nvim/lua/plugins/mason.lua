@@ -41,6 +41,7 @@ return {
 	},
 	{
 		"mfussenegger/nvim-lint",
+		enabled = false,
 		dependencies = { "williamboman/mason.nvim", },
 		linters_by_ft = { go = { "golangcilint" }, },
 	}
