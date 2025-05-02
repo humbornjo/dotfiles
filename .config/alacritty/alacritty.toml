@@ -8,6 +8,12 @@ TERM = "xterm-256color"
 [font]
 size = 16.0
 
+[font.offset]
+y = 2
+
+[font.glyph_offset]
+y = 1
+
 [font.bold]
 family = "SFMono Nerd Font"
 style = "Bold"
@@ -229,7 +235,7 @@ key = "Key9"
 mods = "Command"
 
 [window]
-decorations = "buttonless"
+decorations = "Buttonless"
 dynamic_padding = false
 opacity = 0.98
 option_as_alt = "OnlyLeft"

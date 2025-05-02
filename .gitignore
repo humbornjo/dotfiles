@@ -1,4 +1,5 @@
 .profile
+.docker/
 .cargo/
 .aws/
 .azure
