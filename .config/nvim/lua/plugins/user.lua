@@ -70,9 +70,9 @@ return {
 				},
 				sections = {
 					{ section = "header" },
-					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
 					{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
 					{ section = "startup" },
 				},
 			},
@@ -129,6 +129,7 @@ return {
 
 	{
 		"windwp/nvim-autopairs",
+		enabled = false,
 		config = function(plugin, opts)
 			require("astronvim.plugins.configs.nvim-autopairs")(plugin, opts) -- include the default astronvim config that calls the setup call
 			-- add more custom autopairs configuration such as custom rules
