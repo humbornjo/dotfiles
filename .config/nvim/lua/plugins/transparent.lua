@@ -16,8 +16,8 @@ return {
         'FloatBorder', 'FloatTitle',
         'NormalFloat', 'FoldColumn',
         'LspInfoBorder', 'DiagnosticSignWarn',
+        'TabLine', 'TabLineFill', 'WinBar', 'WinBarNC', -- 'TabLineSel',
         'GitSignsAdd', 'GitSignsChange', 'GitSignsDelete',
-        'TabLineSel', 'TabLine', 'TabLineFill', 'WinBar', 'WinBarNC',
         'NeoTreeNormal', 'NeoTreeNormalNC', 'NeoTreePreview', 'NeoTreeTabInactive',
       },
       -- table: groups you don't want to clear
