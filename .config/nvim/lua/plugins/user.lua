@@ -129,7 +129,6 @@ return {
 
 	{
 		"windwp/nvim-autopairs",
-		enabled = false,
 		config = function(plugin, opts)
 			require("astronvim.plugins.configs.nvim-autopairs")(plugin, opts) -- include the default astronvim config that calls the setup call
 			-- add more custom autopairs configuration such as custom rules
@@ -151,7 +150,8 @@ return {
 							:with_cr(cond.none()),
 				},
 				-- disable for .vim files, but it work for another filetypes
-				Rule("a", "a", "-vim")
+				Rule("a", "a", "-vim"),
+				Rule("'", "'", "-scm")
 			)
 		end,
 	},
