@@ -1,5 +1,6 @@
 return {
   "xiyaowong/transparent.nvim",
+  dependencies = { "rebelot/heirline.nvim" },
   config = function()
     vim.g.transparent_enabled = true
     require("transparent").setup({
