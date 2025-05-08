@@ -13,6 +13,7 @@ return {
 				"buf",
 				"gopls",
 				"clangd",
+				"helm-ls",
 				"pyright",
 				"rust-analyzer",
 				"lua-language-server",
@@ -43,6 +44,12 @@ return {
 		"mfussenegger/nvim-lint",
 		enabled = false,
 		dependencies = { "williamboman/mason.nvim", },
-		linters_by_ft = { go = { "golangcilint" }, },
+		linters_by_ft = {
+			go = { "golangcilint" },
+		},
+	},
+	{
+  	"towolf/vim-helm",
+  	ft = 'helm'
 	}
 }

@@ -1,6 +1,5 @@
 return {
 	"FabijanZulj/blame.nvim",
-	enable = false,
 	lazy = false,
 	keys = {
 		{ "<leader>gl", mode = { "n" }, "<cmd>BlameToggle virtual<cr>", desc = "Toggle blame virtual" },

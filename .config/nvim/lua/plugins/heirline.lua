@@ -1,3 +1,4 @@
+-- lua print(require("astroui.status").hl.mode_bg())
 return {
   "rebelot/heirline.nvim",
   opts = function(_, opts)
@@ -12,7 +13,8 @@ return {
       status.component.mode({
         -- enable mode text with padding as well as an icon before it
         mode_text = {
-          icon = { kind = "VimIcon", padding = { right = 1, left = 1 } },
+          icon = { kind = "NvimIcon", padding = { right = 1, left = 1 } },
+          padding = { right = 1 },
         },
         -- surround the component with a separators
         surround = {
@@ -57,11 +59,11 @@ return {
       -- the elements after this will appear on the right of the statusline
       status.component.fill(),
       -- add a component to display tree-sitter
-      status.component.treesitter(),
+      status.component.treesitter({ surround = { separator = "none" } }),
       -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
       status.component.lsp({
         lsp_progress = false,
-        surround = { separator = "right" },
+        surround = { separator = {"  ", ""} },
       }),
       -- NvChad has some nice icons to go along with information, so we can create a parent component to do this
       -- all of the children of this table will be treated together as a single component
