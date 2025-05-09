@@ -2,8 +2,7 @@
 cd ~ && mkdir Repository && cd Repository
 git clone git@github.com:humbornjo/dotfiles.git dotfiles
 
-# font
-brew install font-lilex-nerd-font
+# font brew install font-lilex-nerd-font
 
 brew install fish
 brew install tmux
@@ -33,6 +32,8 @@ brew install yq
 brew install pgcli
 brew install wakatime-cli
 brew install k3d
+brew install k9s
+brew install kubectl-ai
 brew install lazydocker
 brew install gh
 brew install git
@@ -92,6 +93,3 @@ fisher install edc/bass   # franciscolourenco/done
 # tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
-
-
-

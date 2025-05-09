@@ -67,6 +67,7 @@ abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
 abbr k kubectl
 abbr ka killall
+abbr kai "kubectl ai --model gemini-2.5-pro-exp-03-25 --quiet"
 abbr kc kubectx
 abbr kdl "kubectl delete"
 abbr kds "kubectl describe"
