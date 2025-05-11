@@ -148,11 +148,11 @@ return {
 							:with_del(cond.not_after_regex("xx"))
 					-- disable adding a newline when you press <cr>
 							:with_cr(cond.none()),
-				},
-				-- disable for .vim files, but it work for another filetypes
-				Rule("a", "a", "-vim"),
-				Rule("'", "'", "-scm")
+					-- disable for .vim files, but it work for another filetypes
+					-- Rule("a", "a", "-vim")
+				}
 			)
+			npairs.get_rules("'")[1].not_filetypes = { 'clojure', 'scheme', 'lisp' }
 		end,
 	},
 
