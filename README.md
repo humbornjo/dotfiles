@@ -11,16 +11,16 @@ Heavily inspired by [joshmedeski's config](https://github.com/joshmedeski/dotfil
 
 ## Preview
 
-![](./asset/exa.png)
-![](./asset/lore.png)
-![](./asset/nvim.png)
+![preview_1](./asset/preview_1.png)
+![preview_2](./asset/preview_2.png)
+![preview_3](./asset/preview_3.png)
 
 ## TODO
 
 - [x] ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
 - [x] learn how to [improve my workflow](https://www.reddit.com/r/neovim/comments/w8n831/use_overseernvim_to_run_commands_on_save/) using dap and overseer.
 - [x] clean my config, time to be a epic lua developer, baby.
-- [ ] settle all the debuggers.
+- [x] settle all the debuggers.
 
 ## Software
 
