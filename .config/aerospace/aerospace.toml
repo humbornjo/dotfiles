@@ -109,3 +109,7 @@ run = 'layout tiling'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'layout tiling'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'layout tiling'
