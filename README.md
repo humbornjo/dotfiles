@@ -24,7 +24,7 @@ Heavily inspired by [joshmedeski's config](https://github.com/joshmedeski/dotfil
 
 ## Software
 
-- Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+- Terminal: [Ghostty](https://github.com/ghostty-org/ghostty)
 - Font: [SFMono Nerd Font](https://github.com/epk/SF-Mono-Nerd-Font/issues/4)
 - Colors: [gruvbox-material](https://github.com/f4z3r/gruvbox-material.nvim)
 - Shell: [fish](https://fishshell.com)

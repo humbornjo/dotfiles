@@ -8,7 +8,6 @@ return {
 				original_on_attach(bufnr)
 			end
 			-- continue with customizations such as deleting mappings
-			vim.keymap.del("n", "<Leader>gl", { buffer = bufnr })
 			vim.keymap.del("n", "<Leader>gL", { buffer = bufnr })
 		end
 	end,

@@ -2,7 +2,7 @@ return {
 	"FabijanZulj/blame.nvim",
 	lazy = false,
 	keys = {
-		{ "<leader>gl", mode = { "n" }, "<cmd>BlameToggle virtual<cr>", desc = "Toggle blame virtual" },
+		{ "<leader>gB", mode = { "n" }, "<cmd>BlameToggle virtual<cr>", desc = "Toggle blame virtual" },
 		{ "<leader>gL", mode = { "n" }, "<cmd>BlameToggle window<cr>",  desc = "Toggle blame window" },
 	},
 	config = function()

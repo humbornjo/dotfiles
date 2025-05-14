@@ -1,0 +1,89 @@
+# vim: set filetype=dosini
+#
+#  ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗████████╗██╗   ██╗
+# ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ██║  ███╗███████║██║   ██║███████╗   ██║      ██║    ╚████╔╝
+# ██║   ██║██╔══██║██║   ██║╚════██║   ██║      ██║     ╚██╔╝
+# ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║      ██║      ██║
+#  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝      ╚═╝
+#
+# Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.
+# https://ghostty.org/docs/config/reference
+
+# BUG: Improper handling of window title sequences can lead to arbitrary command execution
+# https://github.com/ghostty-org/ghostty/security/advisories/GHSA-5hcq-3j4q-4v6p
+title = Ghostty
+
+###########
+## shell ##
+###########
+command = "/opt/homebrew/bin/fish --login"
+shell-integration = fish
+shell-integration-features = "no-cursor,sudo,title"
+
+#################
+## UI / window ##
+#################
+bold-is-bright = true
+macos-icon = "xray"
+macos-titlebar-style = hidden
+macos-window-shadow = false
+mouse-hide-while-typing = true
+window-padding-balance = true
+window-save-state = always
+window-theme = auto
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 4
+
+# visuals
+font-size = 16
+font-family = "SFMono Nerd Font"
+cursor-text = "#000000"
+background-opacity = 0.985
+theme = "gruvbox-material-hard-dark"
+
+###############
+## clipboard ##
+###############
+clipboard-read = "allow"
+clipboard-write = "allow"
+clipboard-trim-trailing-spaces = true
+
+#################
+## keybindings ##
+#################
+# Some useful encoded characters:
+# \x0a = Enter/Return
+# \x1b = Esc
+# \x02 = <C-b> (tmux prefix)
+macos-option-as-alt = "left"
+
+# switch to window by index (1-based)
+keybind = super+physical:one=text:\x021
+keybind = super+physical:two=text:\x022
+keybind = super+physical:three=text:\x023
+keybind = super+physical:four=text:\x024
+keybind = super+physical:five=text:\x025
+keybind = super+physical:six=text:\x026
+keybind = super+physical:seven=text:\x027
+keybind = super+physical:eight=text:\x028
+keybind = super+physical:nine=text:\x029
+
+# :w (write buffer)
+keybind = super+r=reload_config
+keybind = super+s=text:\x1b\x3a\x77\x0a
+# toggle zoom panel
+keybind = super+z=text:\x02z
+
+# special characters for nvim
+# jump back
+keybind = super+left_bracket=text:\x0f
+# jump forward
+keybind = super+right_bracket=text:\x09
+
+# alt-left/alt-right
+# bindkey "\e[1;3D" backward-word     # ⌥←
+# bindkey "\e[1;3C" forward-word      # ⌥→
+keybind = alt+left=text:\x1b\x5b\x31\x3b\x33\x44
+keybind = alt+right=text:\x1b\x5b\x31\x3b\x33\x43

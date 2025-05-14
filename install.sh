@@ -1,8 +1,9 @@
 # Do the following two line first
-cd ~ && mkdir Repository && cd Repository
+cd ~ && mkdir -p Repository && cd Repository
 git clone git@github.com:humbornjo/dotfiles.git dotfiles
 
-# font brew install font-lilex-nerd-font
+# font alternate to SF Mono (IMO)
+brew install font-iosevka-nerd-font
 
 brew install fish
 brew install tmux
@@ -31,10 +32,16 @@ brew install jq
 brew install yq
 brew install pgcli
 brew install wakatime-cli
+
+# docker family
 brew install k3d
 brew install k9s
+brew install kubectx
 brew install kubectl-ai
 brew install lazydocker
+brew install kubernetes-cli
+
+# git family
 brew install gh
 brew install git
 brew install lazygit
@@ -42,8 +49,10 @@ brew install git-delta
 brew install arl/arl/gitmux
 brew install clementtsang/bottom/bottom
 
+# pl specific
 brew install uv
 brew install llvm
+brew install rustup
 brew install fnm                        # node version manager
 brew install npm
 brew install pnpm
@@ -53,13 +62,17 @@ brew install cowsay
 brew install fortune
 brew install lolcat
 
+# refer to :checkhealth snacks
+brew install gs                         # for pdf rendering
+brew install imagemagick                # for image rendering
+
 brew install --cask rar
 brew install --cask emacs
 brew install --cask slack
 brew install --cask maccy               # clipboard manager
-brew install --cask kitty
 brew install --cask zotero
 brew install --cask alfred
+brew install --cask ghostty
 brew install --cask spotify
 brew install --cask postman
 brew install --cask vivaldi             # browser in chromium
@@ -68,7 +81,7 @@ brew install --cask obsidian
 brew install --cask orbstack
 brew install --cask telegram
 brew install --cask wireshark
-brew install --cask alacritty
+brew install --cask alacritty           # alacritty for hardcore dev
 brew install --cask visual-studio-code
 brew install --cask karabiner-elements
 brew install --cask espanso/espanso/espanso
@@ -91,5 +104,6 @@ fisher install jorgebucaran/fisher
 fisher install edc/bass   # franciscolourenco/done
 
 # tpm
+# PS: follow the official tutorial to init
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
