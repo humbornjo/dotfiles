@@ -70,20 +70,31 @@ keybind = super+physical:seven=text:\x027
 keybind = super+physical:eight=text:\x028
 keybind = super+physical:nine=text:\x029
 
-# :w (write buffer)
+# [NVIM:BUFFER] :w (write buffer)
 keybind = super+r=reload_config
 keybind = super+s=text:\x1b\x3a\x77\x0a
-# toggle zoom panel
+
+# [NVIM:PANEL] toggle zoom panel
 keybind = super+z=text:\x02z
 
-# special characters for nvim
+# [NVIM:JUMP]
 # jump back
 keybind = super+left_bracket=text:\x0f
 # jump forward
 keybind = super+right_bracket=text:\x09
 
-# alt-left/alt-right
-# bindkey "\e[1;3D" backward-word     # ⌥←
-# bindkey "\e[1;3C" forward-word      # ⌥→
+# [NVIM:PANEL] resize panel
+# bindkey "\e[1;3D" # ⌥←
+# bindkey "\e[1;3C" # ⌥→
 keybind = alt+left=text:\x1b\x5b\x31\x3b\x33\x44
 keybind = alt+right=text:\x1b\x5b\x31\x3b\x33\x43
+
+# [NVIM:NAVIGATE] treesitter node navigation
+# navigate left
+keybind = super+h=text:\x02h
+# navigate right
+keybind = super+l=text:\x02l
+# navigate up
+keybind = super+k=text:\x02k
+# navigate down
+keybind = super+j=text:\x02j
