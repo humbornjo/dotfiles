@@ -55,9 +55,6 @@ return {
 				["L"] = { function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
 				["H"] = { function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
 
-				-- press Command+Z to toggle maximum panel in nvim
-				["\x02z"] = { "<Plug>(zoom-toggle)" },
-
 				-- mappings seen under group name "Buffer"
 				["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "new tab" },
 				["<Leader>bD"] = {
