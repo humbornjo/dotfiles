@@ -1,6 +1,5 @@
 return {
   "roobert/search-replace.nvim",
-
   keys = {
     { "<C-r>",       "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", mode = "v", desc = "Search/Replace Single Buffer Visual", },
     { "<C-s>",       "<CMD>SearchReplaceWithinVisualSelection<CR>",       mode = "v", desc = "Search/Replace Within Visual", },

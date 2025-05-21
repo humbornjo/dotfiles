@@ -2,7 +2,7 @@ return {
   {
     "mrcjkb/rustaceanvim", -- add lsp plugin
     version = "^5",
-    lazy = false,        -- This plugin is already lazy
+    lazy = false,          -- This plugin is already lazy
     opts = function(_, opts)
       local astrolsp_avail, astrolsp = pcall(require, "astrolsp")
       local astrolsp_opts = (astrolsp_avail and astrolsp.lsp_opts("rust_analyzer")) or {}
