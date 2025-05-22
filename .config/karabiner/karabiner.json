@@ -9,7 +9,19 @@
                 },
                 "rules": [
                     {
-                        "description": "Change right_command+hjkl to arrow keys",
+                        "description": "[D]Command-h -> not minimizing window",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["left_command"] }
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[R]Command-hjkl -> arrow keys",
                         "manipulators": [
                             {
                                 "from": {
@@ -58,7 +70,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock to Esc and Ctrl",
+                        "description": "[R]Caps_Lock -> Esc",
                         "manipulators": [
                             {
                                 "from": {
@@ -72,7 +84,7 @@
                         ]
                     },
                     {
-                        "description": "Use left_shift to switch input sources",
+                        "description": "[L]Shift -> switch input sources",
                         "manipulators": [
                             {
                                 "conditions": [
