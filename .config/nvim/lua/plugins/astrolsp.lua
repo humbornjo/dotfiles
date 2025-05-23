@@ -90,6 +90,10 @@ return {
 					desc = "Declaration of current symbol",
 					cond = "textDocument/declaration",
 				},
+				gA = {
+					function() vim.lsp.buf.code_action() end,
+					desc = "vim.lsp.buf.code_action()",
+				},
 				["<Leader>uY"] = {
 					function()
 						require("astrolsp.toggles").buffer_semantic_tokens()
@@ -99,6 +103,12 @@ return {
 						return client.supports_method("textDocument/semanticTokens/full")
 								and vim.lsp.semantic_tokens ~= nil
 					end,
+				},
+			},
+			x = {
+				gA = {
+					function() vim.lsp.buf.code_action() end,
+					desc = "vim.lsp.buf.code_action()",
 				},
 			},
 		},

@@ -17,23 +17,19 @@ Heavily inspired by [joshmedeski's config](https://github.com/joshmedeski/dotfil
 
 ## TODO
 
-- [x] ~~Add [nnn](https://github.com/jarun/nnn) as terminal file-manager~~
-- [x] learn how to [improve my workflow](https://www.reddit.com/r/neovim/comments/w8n831/use_overseernvim_to_run_commands_on_save/) using dap and overseer.
-- [x] clean my config, time to be a epic lua developer, baby.
-- [x] settle all the debuggers.
+- [ ] Contribute to some cool neovim plugin
 
 ## Software
 
-- Terminal: [Ghostty](https://github.com/ghostty-org/ghostty)
 - Font: [SFMono Nerd Font](https://github.com/epk/SF-Mono-Nerd-Font/issues/4)
-- Colors: [gruvbox-material](https://github.com/f4z3r/gruvbox-material.nvim)
+- Colors: [gruvbox-material](https://github.com/sainnhe/gruvbox-material)
 - Shell: [fish](https://fishshell.com)
+- Terminal: [Ghostty](https://github.com/ghostty-org/ghostty)
 - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
-- Editor: [Neovim](https://neovim.io) + [AstroNvim](https://astronvim.com/)
-- Git: [lazygit](https://github.com/jesseduffield/lazygit)
 - terminal file manager: [yazi](https://github.com/sxyazi/yazi)
 - macOS package manager: [Homebrew](https://brew.sh)
-- npm package manager: [pnpm](https://pnpm.io/)
+- Git: [lazygit](https://github.com/jesseduffield/lazygit)
+- Editor: [Neovim](https://neovim.io) + [AstroNvim](https://astronvim.com/)
 
 ## Help
 

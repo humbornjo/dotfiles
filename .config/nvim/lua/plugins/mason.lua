@@ -20,6 +20,7 @@ return {
 				"vue-language-server",
 				"yaml-language-server",
 				"astro-language-server",
+				"typescript-language-server",
 				"dockerfile-language-server",
 
 				-- install linters
@@ -49,7 +50,7 @@ return {
 		},
 	},
 	{
-  	"towolf/vim-helm",
-  	ft = 'helm'
+		"towolf/vim-helm",
+		ft = 'helm'
 	}
 }
