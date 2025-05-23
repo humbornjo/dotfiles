@@ -21,6 +21,7 @@ set -Ux SHELL "bash"
 set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
 set -Ux VISUAL "nvim"
 set -Ux PAGER "less"
+set -Ux EZA_CONFIG_DIR "$HOME/.config/eza"
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux KUBECONFIG "$HOME/.kube/config"
