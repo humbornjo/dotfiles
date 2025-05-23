@@ -1,4 +1,4 @@
 return {
   "matze/vim-move",
-  enabled = false,
+  enabled = true,
 }

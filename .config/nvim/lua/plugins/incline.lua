@@ -1,5 +1,3 @@
-local _icons = require("config.icons")
-
 return {
   "b0o/incline.nvim",
   enabled = true,
@@ -7,16 +5,17 @@ return {
   event = "BufEnter",
   dependencies = { "sainnhe/gruvbox-material" },
   config = function()
+    local get_icon = require("astroui").get_icon
     local config = vim.fn["gruvbox_material#get_configuration"]()
     local palette = vim.fn["gruvbox_material#get_palette"](
       config.background, config.foreground, config.colors_override
     )
     local function get_diagnostic_label(props)
       local icons = {
-        warn = { icon = _icons.DiagnosticWarn, guifg = palette.yellow[1] },
-        hint = { icon = _icons.DiagnosticHint, guifg = palette.green[1] },
-        info = { icon = _icons.DiagnosticInfo, guifg = palette.blue[1] },
-        error = { icon = _icons.DiagnosticError, guifg = palette.red[1] },
+        warn = { icon = get_icon("DiagnosticWarn"), guifg = palette.yellow[1] },
+        hint = { icon = get_icon("DiagnosticHint"), guifg = palette.green[1] },
+        info = { icon = get_icon("DiagnosticInfo"), guifg = palette.blue[1] },
+        error = { icon = get_icon("DiagnosticError"), guifg = palette.red[1] },
       }
       local label = {}
       for severity, icon_info in pairs(icons) do

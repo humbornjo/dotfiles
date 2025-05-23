@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 local function fmt_unit(num, unit)
   return ("%s"):format(num)
 end
@@ -86,7 +88,6 @@ return {
   "Wansmer/symbol-usage.nvim",
   event = "LspAttach", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
   priority = 1000,
-  enabled = false,
   ---@type UserOpts
   config = function()
     local function h(name)

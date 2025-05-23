@@ -13,7 +13,7 @@ return {
     vim.api.nvim_create_autocmd("User", {
       pattern = "MarkviewAttach",
       callback = function(_)
-        vim.cmd("Markview disable")
+        vim.cmd("Markview enable")
       end
     })
   end,

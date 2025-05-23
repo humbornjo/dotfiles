@@ -11,12 +11,13 @@
 command_timeout = 2000
 
 [character]
-success_symbol = "[\uf054](green)" # 
-vicmd_symbol = "[\ue62b](white)" # 
-error_symbol = "[\uf054](red)" # 
+error_symbol = '[\$](bold red)'
+success_symbol = '[\$](bold green)'
+vicmd_symbol = "[\uf27d](yellow)" # 
 
 [directory]
-style = "blue bold"
+style = "bold blue"
+truncation_length = 3
 
 [package]
 disabled = true

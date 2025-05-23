@@ -52,7 +52,7 @@ return {
       }),
       -- add a component for the current git diff if it exists and use no separator for the sections
       status.component.git_diff({
-        padding = { left = 1 },
+        -- padding = { left = 1 },
         surround = { separator = "none" },
       }),
       -- fill the rest of the statusline
@@ -63,7 +63,7 @@ return {
       -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
       status.component.lsp({
         lsp_progress = false,
-        surround = { separator = {"  ", ""} },
+        surround = { separator = { "  ", "" } },
       }),
       -- NvChad has some nice icons to go along with information, so we can create a parent component to do this
       -- all of the children of this table will be treated together as a single component

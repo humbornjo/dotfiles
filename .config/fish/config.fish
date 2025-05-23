@@ -21,13 +21,10 @@ set -Ux SHELL "bash"
 set -Ux EDITOR "nvim" # 'neovim/neovim' text editor
 set -Ux VISUAL "nvim"
 set -Ux PAGER "less"
+set -Ux EZA_CONFIG_DIR "$HOME/.config/eza"
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux KUBECONFIG "$HOME/.kube/config"
-
-# personal config
-fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
-fish_add_path $HOME/.config/bin # my custom scripts
 
 # golang
 set -Ux GOPATH "$HOME/Library/go"
@@ -50,11 +47,6 @@ end
 # fvm: flutter version manager
 set -Ux FVM_HOME "$HOME/.fvm"
 fish_add_path $FVM_HOME/default/bin
-
-# pyenv: disable some unpleasent msg
-set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
-set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
 
 # ghcup-env
 set -q GHCUP_INSTALL_BASE_PREFIX[1];
