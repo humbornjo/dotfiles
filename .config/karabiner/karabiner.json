@@ -9,18 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "[D]Command-h -> not minimizing window",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": { "mandatory": ["left_command"] }
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "[R]Command-hjkl -> arrow keys",
                         "manipulators": [
                             {

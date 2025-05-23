@@ -9,6 +9,7 @@ brew install fish
 brew install tmux
 brew install sesh
 brew install yazi                       # terminal file manager
+brew install stow
 brew install neovim
 brew install zoxide
 brew install mackup
@@ -30,6 +31,7 @@ brew install fastfetch
 
 brew install jq
 brew install yq
+brew install libpq                      # postgresql tools
 brew install pgcli
 brew install wakatime-cli
 
@@ -69,7 +71,6 @@ brew install imagemagick                # for image rendering
 brew install --cask rar
 brew install --cask emacs
 brew install --cask slack
-brew install --cask maccy               # clipboard manager
 brew install --cask zotero
 brew install --cask alfred
 brew install --cask ghostty
@@ -89,21 +90,23 @@ brew install --cask nikitabobko/tap/aerospace
 
 # AstroNvim
 mv ~/.config/nvim ~/.config/nvim.bak
-
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
-
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
-
-# fisher
-brew install fisher
-fisher install jorgebucaran/fisher
-fisher install edc/bass   # franciscolourenco/done
 
 # tpm
 # PS: follow the official tutorial to init
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
+
+fish
+# fisher
+brew install fisher
+fisher install jorgebucaran/fisher
+fisher install edc/bass franciscolourenco/done
+# add path
+fish_add_path /usr/local/go/bin
+fish_add_path /opt/homebrew/opt/llvm/bin
