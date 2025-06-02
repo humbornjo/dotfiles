@@ -77,6 +77,7 @@ brew install --cask ghostty
 brew install --cask spotify
 brew install --cask postman
 brew install --cask vivaldi             # browser in chromium
+brew install --cask zen                 # browser in firefox
 brew install --cask firefox             # you should install it anyhow
 brew install --cask obsidian
 brew install --cask orbstack
