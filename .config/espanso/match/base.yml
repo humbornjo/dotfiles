@@ -1,0 +1,47 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y/%m/%d"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # feel free to rate the world, lid.
+  - regex: :st(?P<fstars>\d+),(?P<estars>\d+)
+    replace: "{{stars}}"
+    vars:
+      - name: stars
+        type: script
+        params:
+          args:
+            - bash
+            - -c
+            - seq 1 {{fstars}} | xargs -I {} printf '★' | xargs -I {} echo '{}'`seq 1 {{estars}} |xargs -I {} printf '☆'`
