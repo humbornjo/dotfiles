@@ -62,6 +62,7 @@ abbr gsl "git stash list"
 abbr gsp "git stash pop"
 abbr gss "git status"
 abbr gsw "git switch"
+abbr gsz "git ls-files -z | xargs -0 du -ch | tail -n1"
 
 abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
