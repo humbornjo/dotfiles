@@ -1,6 +1,7 @@
 # Do the following two line first
 cd ~ && mkdir -p Repository && cd Repository
-git clone --depth 1 git@github.com:humbornjo/dotfiles.git dotfiles
+GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 \
+	git@github.com:humbornjo/dotfiles.git dotfiles
 
 # font alternate to SF Mono (IMO)
 brew install font-iosevka-nerd-font
