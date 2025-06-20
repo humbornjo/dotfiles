@@ -6,9 +6,13 @@ return {
     },
     opts = {
       sources = {
-        default = { 'ecolog', 'lsp', 'path', 'snippets', 'buffer' },
+        default = {
+          'lsp', 'path', 'snippets', 'buffer',
+          "dadbod", 'ecolog',
+        },
         providers = {
           ecolog = { name = 'ecolog', module = 'ecolog.integrations.cmp.blink_cmp' },
+          dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
         },
       },
     },

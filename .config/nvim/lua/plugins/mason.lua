@@ -24,6 +24,7 @@ return {
 				"dockerfile-language-server",
 
 				-- install linters
+				"sqlfluff",
 				"golangci-lint",
 
 				-- install formatters
