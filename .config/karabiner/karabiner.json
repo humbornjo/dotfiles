@@ -9,6 +9,19 @@
                 },
                 "rules": [
                     {
+                        "description": "[R]Option -> Fn",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "fn" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[R]Command-hjkl -> arrow keys",
                         "manipulators": [
                             {
