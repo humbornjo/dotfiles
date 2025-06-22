@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"Exafunction/windsurf.vim",
 	config = function()
 		-- Change '<C-g>' here to any keycode you like.
