@@ -56,7 +56,8 @@ Examples:
 
   # Execute the ps command and pipe to fzf with explicit options
   # We're passing the options directly to fzf, overriding FZF_DEFAULT_OPTS if it exists.
-  set -l __kp__pid_output (eval "$sudo_cmd" | sed 1d | eval "fzf --height=100% -m --header='[kill:process] Select process(es) to kill:'" | awk '{print $2}')
+  set -l __kp__pid_output (eval "$sudo_cmd" | sed 1d | eval "fzf --height=100% -m --header='[kill:process] Select
+  process(es) to kill:'" | awk '{print $1}')
 
   if test -z "$__kp__pid_output"
     echo "No process selected. Exiting."
