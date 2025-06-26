@@ -34,6 +34,7 @@ brew install jq
 brew install yq
 brew install libpq                      # postgresql tools
 brew install pgcli
+brew install yozefu                     # kafka consumer client
 brew install wakatime-cli
 
 # docker family
