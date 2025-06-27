@@ -2,6 +2,7 @@
 # NOTE: manage fish abbreviations
 # https://fishshell.com/docs/current/cmds/abbr.html
 
+abbr ai "gemini -p"
 abbr ast "aw set -t (aw list | fzf-tmux -p --reverse --preview 'aw set -t {}')"
 
 abbr bi "brew install"
