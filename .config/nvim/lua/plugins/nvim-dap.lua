@@ -2,8 +2,10 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
-      { "igorlfs/nvim-dap-view", opts = {},
-        config = function (_, opts)
+      {
+        "igorlfs/nvim-dap-view",
+        opts = {},
+        config = function(_, opts)
           require("dap-view").setup(opts)
           local dap, dv = require("dap"), require("dap-view")
           dap.listeners.before.attach["dap-view-config"] = function()
@@ -25,7 +27,7 @@ return {
       local dap = require("dap")
       dap.adapters.lldb = {
         type = "executable",
-        command = "/opt/homebrew/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
+        command = "/opt/homebrew/opt/llvm/bin/lldb", -- adjust as needed, must be absolute path
         name = "lldb",
       }
       dap.configurations.go = nil
