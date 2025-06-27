@@ -65,7 +65,12 @@ return {
 				},
 				-- tables with just a `desc` key will be registered with which-key if it's installed
 				-- this is useful for naming menus
-				["<leader>b"] = { name = "buffers", desc = " Buffers" },
+				["<leader>b"] = { desc = "buffers", name = " Buffers" },
+				["<leader>y"] = { desc = "yazi", name = "󰇥 Yazi" },
+				["<leader>r"] = { desc = "find and replace", name = " Find and Replace" },
+				["<leader>s"] = { desc = "snacks search", name = "󱥰 Snacks Search" },
+				["<leader>v"] = { desc = "very good utilities", name = "󱒔 Very Good Utilities" },
+
 				-- quick save
 				-- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 				["<A-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },

@@ -21,7 +21,7 @@ abbr dc "docker compose"
 abbr dcd "docker compose down"
 abbr dcdv "docker compose down -v"
 abbr dcr "docker compose restart"
-abbr dcu "docker compose up -d"
+abbr dcud "docker compose up -d"
 abbr dps "docker ps --format 'table {{.Names}}\t{{.Status}}'"
 
 abbr e exit
@@ -65,33 +65,33 @@ abbr gsz "git ls-files -z | xargs -0 du -ch | tail -n1"
 
 abbr hd "history delete --exact --case-sensitive \'(history | fzf-tmux -p -m)\'"
 
-abbr k kubectl
-abbr ka killall
+abbr k "kubectl"
+abbr kaf "kubectl apply -f"
 abbr kai "kubectl ai --model gemini-2.5-pro-exp-03-25 --quiet"
-abbr kc kubectx
+abbr kall "killall"
+abbr kc "kubectx"
 abbr kdl "kubectl delete"
 abbr kds "kubectl describe"
-abbr kn "killall node"
-abbr kns kubens
+abbr kk "yozf"
+abbr kns "kubens"
 abbr kg "kubectl get"
-abbr kgp "kubectl get pods -A"
-abbr kgs "kubectl get services -A"
-abbr kaf "kubectl apply -f"
+abbr kgp "kubectl get pods"
+abbr kgpa "kubectl get pods -A"
+abbr kgs "kubectl get services"
+abbr kgsa "kubectl get services -A"
 
-abbr ls eza
+abbr ls "eza"
 abbr ll "eza -al"
 abbr lt "eza -T"
-abbr ldk lazydocker
-abbr lg lazygit
+abbr ldk "lazydocker"
+abbr lg "lazygit"
 
 abbr nb "npm run build"
 abbr nd "npm run dev"
-abbr nf fastfetch
+abbr nf "fastfetch"
 abbr ni "npm install"
 abbr nt "npm run test"
 abbr nxdg "nx dep-graph"
-
-abbr os "overmind start"
 
 abbr p "pnpm run (jq -r '.scripts|to_entries[]|((.key))' package.json | fzf-tmux -p --border-label='pnpm run')"
 abbr pa "pnpm add"
@@ -122,8 +122,7 @@ abbr rmr "rm -rf"
 abbr sa "SwitchAudioSource -t output -s (SwitchAudioSource -t output -a | fzf-tmux -p --reverse)"
 abbr sai "SwitchAudioSource -t input -s (SwitchAudioSource -t input -a | fzf-tmux -p --reverse)"
 abbr sao "SwitchAudioSource -t output -s (SwitchAudioSource -t output -a | fzf-tmux -p --reverse)"
-abbr sb "sam build"
-abbr sf "source ~/.config/fish/config.fish"
+abbr sf "source ~/.config/fish/config.fish && source ~/.config/fish/conf.d/*.fish"
 abbr st "tmux source ~/.config/tmux/tmux.conf"
 
 abbr t "tmux"
@@ -140,8 +139,10 @@ abbr vi "nvim"
 abbr vfzf "nvim (fd --type f --hidden --follow --exclude .git | fzf-tmux -p -w 100 --reverse --preview 'bat --color=always --style=numbers --line-range=:500 {}')"
 abbr va "nvim ~/.config/alacritty/alacritty.toml"
 abbr vf "nvim ~/.config/fish/config.fish"
-abbr vt "nvim ~/.config/tmux/tmux.conf"
+abbr vg "nvim ~/.config/ghostty/config"
 abbr vp "nvim package.json"
+abbr vt "nvim ~/.config/tmux/tmux.conf"
+abbr vv "nvim ~/.config/nvim/lua/plugins"
 
 abbr y yarn
 abbr ya "yarn add"

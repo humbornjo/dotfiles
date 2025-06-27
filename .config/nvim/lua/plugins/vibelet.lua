@@ -1,21 +1,47 @@
 return {
   {
+    "Exafunction/windsurf.vim",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.g.codeium_no_map_tab = true
+      vim.g.codeium_os = 'Darwin'
+      vim.g.codeium_arch = 'arm64'
+      vim.keymap.set("i", "<M-y>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
+      vim.keymap.set("i", "<M-u>", function() return vim.fn["codeium#AcceptNextLine"]() end,
+        { expr = true, silent = true })
+      vim.keymap.set("i", "<M-i>", function() return vim.fn["codeium#AcceptNextWord"]() end,
+        { expr = true, silent = true })
+      vim.keymap.set("i", "<M-n>", function() return vim.fn["codeium#CycleCompletions"](1) end,
+        { expr = true, silent = true })
+      vim.keymap.set("i", "<M-b>", function() return vim.fn["codeium#CycleCompletions"](-1) end,
+        { expr = true, silent = true })
+      vim.keymap.set("i", "<M-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true, silent = true })
+    end,
+  },
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
-    event = "BufReadPost",
+    -- event = "BufReadPost",
     opts = {
       suggestion = {
-        enabled = not vim.g.ai_cmp,
+        enabled = false,
         auto_trigger = false,
         hide_during_completion = vim.g.ai_cmp,
+        -- keymap = {
+        --   accept = "<M-y>",
+        --   accept_line = "<M-u>",
+        --   accept_word = "<M-i>",
+        --   next = "<M-n>",
+        --   prev = "<M-b>",
+        -- },
         keymap = {
-          accept = "<M-y>",
-          accept_line = "<M-u>",
-          accept_word = "<M-i>",
-          next = "<M-n>",
-          prev = "<M-b>",
-        },
+          accept = false,
+          accept_line = false,
+          accept_word = false,
+          next = false,
+          prev = false,
+        }
       },
       panel = { enabled = false },
       filetypes = {

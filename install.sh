@@ -56,9 +56,12 @@ brew install clementtsang/bottom/bottom
 # pl specific
 brew install uv
 brew install llvm
+brew install zigup
 brew install rustup
+brew install chicken
 brew install fnm                        # node version manager
 brew install npm
+brew install yarn
 brew install pnpm
 brew install oven-sh/bun/bun
 
