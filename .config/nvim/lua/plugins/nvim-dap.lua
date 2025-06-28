@@ -1,25 +1,41 @@
+local function get_executable()
+  return coroutine.create(function(dap_run_co)
+    local program = vim.fn.getcwd() .. "/"
+    vim.ui.input({ prompt = "Path to executable: ", default = program }, function(input)
+      coroutine.resume(dap_run_co, input)
+    end)
+  end)
+end
+
+local function get_arguments()
+  return coroutine.create(function(dap_run_co)
+    local args = {}
+    vim.ui.input({ prompt = "Arguments: " }, function(input)
+      args = vim.split(input or "", " ", { trimempty = true })
+      coroutine.resume(dap_run_co, args)
+    end)
+  end)
+end
+
 return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
       {
         "igorlfs/nvim-dap-view",
-        opts = {},
+        ---@module 'dap-view'
+        ---@type dapview.Config
+        opts = {
+          winbar = { controls = { enabled = true } },
+          windows = { terminal = { position = "right" } }
+        },
         config = function(_, opts)
           require("dap-view").setup(opts)
           local dap, dv = require("dap"), require("dap-view")
-          dap.listeners.before.attach["dap-view-config"] = function()
-            dv.open()
-          end
-          dap.listeners.before.launch["dap-view-config"] = function()
-            dv.open()
-          end
-          dap.listeners.before.event_terminated["dap-view-config"] = function()
-            dv.close()
-          end
-          dap.listeners.before.event_exited["dap-view-config"] = function()
-            dv.close()
-          end
+          dap.listeners.before.attach["dap-view-config"] = function() dv.open() end
+          dap.listeners.before.launch["dap-view-config"] = function() dv.open() end
+          dap.listeners.before.event_terminated["dap-view-config"] = function() dv.close() end
+          dap.listeners.before.event_exited["dap-view-config"] = function() dv.close() end
         end
       },
     },
@@ -27,7 +43,7 @@ return {
       local dap = require("dap")
       dap.adapters.lldb = {
         type = "executable",
-        command = "/opt/homebrew/opt/llvm/bin/lldb", -- adjust as needed, must be absolute path
+        command = "codelldb", -- adjust as needed, must be absolute path
         name = "lldb",
       }
       dap.configurations.go = nil
@@ -36,12 +52,10 @@ return {
           name = "Launch",
           type = "lldb",
           request = "launch",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-          end,
           cwd = "${workspaceFolder}",
+          program = get_executable,
+          args = get_arguments,
           stopOnEntry = false,
-          args = {},
         },
       }
       dap.configurations.c = dap.configurations.cpp

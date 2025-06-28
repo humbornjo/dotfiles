@@ -64,6 +64,7 @@ return {
   },
   {
     'ruifm/gitlinker.nvim',
+    enabled = false,
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require("gitlinker").setup()
