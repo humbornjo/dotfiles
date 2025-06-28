@@ -55,9 +55,25 @@ return {
         -- padding = { left = 1 },
         surround = { separator = "none" },
       }),
+
       -- fill the rest of the statusline
       -- the elements after this will appear on the right of the statusline
       status.component.fill(),
+      {
+        condition = function()
+          return vim.v.hlsearch ~= 0 and vim.o.cmdheight == 0
+        end,
+        init = function(self)
+          local ok, search = pcall(vim.fn.searchcount)
+          if ok and search.total then
+            self.search = search
+          end
+        end,
+        provider = function(self)
+          local search = self.search
+          return string.format(" [%d/%d]  ", search.current, math.min(search.total, search.maxcount))
+        end,
+      },
       -- add a component to display tree-sitter
       status.component.treesitter({ surround = { separator = "none" } }),
       -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
