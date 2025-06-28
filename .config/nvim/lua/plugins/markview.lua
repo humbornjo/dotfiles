@@ -9,7 +9,11 @@ return {
   keys = {
     { "<leader>m", "<cmd>Markview toggle<cr>", desc = "Toggle markview" }
   },
-  config = function()
+  opts = {
+    experimental = { check_rtp_message = false },
+  },
+  config = function(_, opts)
+    require("markview").setup(opts)
     vim.api.nvim_create_autocmd("User", {
       pattern = "MarkviewAttach",
       callback = function(_)

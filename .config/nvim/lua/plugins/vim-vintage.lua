@@ -2,7 +2,10 @@ return {
   {
     "kristijanhusak/vim-dadbod-ui",
     cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
-    dependencies = { "tpope/vim-dadbod" },
+    dependencies = {
+      "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-completion",
+    },
     keys = {
       { "<leader>D", "<cmd>DBUIToggle<CR>", desc = "Toggle DBUI" },
     },
@@ -24,6 +27,25 @@ return {
     end,
   },
   {
-    "kristijanhusak/vim-dadbod-completion",
+    "matze/vim-move",
+    enabled = true,
+  },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+  },
+  {
+    "dhruvasagar/vim-zoom",
+    keys = {
+      -- press Command+Z to toggle maximum panel in nvim
+      -- ["\x02z"] = { "<Plug>(zoom-toggle)" },
+      { "\x02z", "<Plug>(zoom-toggle)", mode = { "n", "t", "i" }, desc = "Toggle Zoom Panel" },
+    }
+  },
+  {
+    "junegunn/vim-easy-align",
+    keys = {
+      { "ga", mode = { "n", "x" }, "<Plug>(EasyAlign)", desc = "Easy Align" },
+    },
   }
 }
