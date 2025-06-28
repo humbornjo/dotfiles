@@ -37,6 +37,7 @@ brew install pgcli
 brew install yozefu                     # kafka consumer client
 brew install gemini-cli
 brew install wakatime-cli
+brew install android-platform-tools     # adb & fastboot
 
 # docker family
 brew install k3d
