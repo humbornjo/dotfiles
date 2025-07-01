@@ -11,8 +11,8 @@
 command_timeout = 2000
 
 [character]
-error_symbol = '[\$](bold red)'
-success_symbol = '[\$](bold green)'
+error_symbol = "[\uf054](bold red)"
+success_symbol = "[\uf054](bold green)"
 vicmd_symbol = "[\uf27d](yellow)" # 
 
 [directory]
