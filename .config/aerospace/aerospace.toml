@@ -99,6 +99,10 @@ if.app-id = 'com.vivaldi.Vivaldi'
 run = 'layout tiling'
 
 [[on-window-detected]]
+if.app-id = 'org.gnu.Emacs'
+run = 'layout tiling'
+
+[[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'layout tiling'
 
