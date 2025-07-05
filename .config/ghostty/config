@@ -42,6 +42,8 @@ font-family = "SFMono Nerd Font"
 cursor-text = "#000000"
 background-opacity = 0.985
 theme = "gruvbox-material-hard-dark"
+custom-shader = "./shaders/cursor_blaze.glsl"
+custom-shader-animation = true
 
 ###############
 ## clipboard ##
