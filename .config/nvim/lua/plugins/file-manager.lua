@@ -39,38 +39,29 @@ return {
     end
   },
   {
-    'echasnovski/mini.files',
-    version = false,
-    opts = {
-      windows = {
-        preview = true,
-        width_focus = 30,
-        width_preview = 30,
+    "refractalize/oil-git-status.nvim",
+    dependencies = {
+      "stevearc/oil.nvim",
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      -- Optional dependencies
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      opts = {
+        keymaps = {
+          -- disable default refresh keymap, use <Cmd>e<CR> instead
+          ["<C-l>"] = false,
+          -- disable default vertical open file keymap
+          ["<C-h>"] = false,
+        },
+
+        win_options = { signcolumn = "yes:2" },
+        view_options = { show_hidden = true },
       },
-      options = {
-        -- Whether to use for editing directories
-        -- Disabled by default in LazyVim because neo-tree is used for that
-        use_as_default_explorer = false,
-      },
+      init = function()
+        vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+      end,
     },
-    keys = {
-      {
-        "<leader>E",
-        function()
-          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
-        end,
-        desc = "Open mini.files (Directory of Current File)",
-      },
-      -- {
-      --   "<leader>fM",
-      --   function()
-      --     require("mini.files").open(vim.uv.cwd(), true)
-      --   end,
-      --   desc = "Open mini.files (cwd)",
-      -- },
-    },
-    config = function()
-      require('mini.files').setup()
-    end
-  },
+
+    config = true,
+  }
 }
