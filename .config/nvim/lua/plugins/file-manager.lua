@@ -1,34 +1,5 @@
 return {
   {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      -- check the installation instructions at
-      -- https://github.com/folke/snacks.nvim
-      "folke/snacks.nvim",
-    },
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>yy",
-        mode = { "n", "v" },
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<leader>yw",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      {
-        "<leader>yl",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
-    },
-  },
-  {
     "nvim-neo-tree/neo-tree.nvim",
     config = function(_, opts)
       opts.source_selector = {
@@ -62,6 +33,26 @@ return {
       end,
     },
 
-    config = true,
+    config = function()
+      local glyphs = {
+        ["!"] = " ",
+        ["?"] = " ",
+        ["A"] = " ",
+        ["C"] = " ",
+        ["D"] = " ",
+        ["M"] = " ",
+        ["R"] = " ",
+        ["T"] = "󱁥 ",
+        ["U"] = "󰾋 ",
+        [" "] = "  ",
+      }
+      require('oil-git-status').setup({
+        show_ignored = true, -- show files that match gitignore with !!
+        symbols = {          -- customize the symbols that appear in the git status columns
+          index = glyphs,
+          working_tree = glyphs,
+        },
+      })
+    end,
   }
 }
