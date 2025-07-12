@@ -2,6 +2,170 @@ if true then return {} end -- WARN: ARCHIVED PLUGINS, KEEP THIS LINE UNCOMMENTED
 
 return {
   {
+    "kristijanhusak/vim-dadbod-ui",
+    cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
+    dependencies = {
+      "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-completion",
+    },
+    keys = {
+      { "<leader>D", "<cmd>DBUIToggle<CR>", desc = "Toggle DBUI" },
+    },
+    init = function()
+      local data_path = vim.fn.stdpath("data")
+
+      vim.g.db_ui_auto_execute_table_helpers = 1
+      vim.g.db_ui_save_location = data_path .. "/dadbod_ui"
+      vim.g.db_ui_show_database_icon = true
+      vim.g.db_ui_tmp_query_location = data_path .. "/dadbod_ui/tmp"
+      vim.g.db_ui_use_nerd_fonts = true
+      vim.g.db_ui_use_nvim_notify = true
+
+      -- NOTE: The default behavior of auto-execution of queries on save is disabled
+      -- this is useful when you have a big query that you don't want to run every time
+      -- you save the file running those queries can crash neovim to run use the
+      -- default keymap: <leader>S
+      vim.g.db_ui_execute_on_save = false
+    end,
+  },
+  {
+    'aaronik/treewalker.nvim',
+    keys = {
+      { "\x02k", "<cmd>Treewalker Up<cr>",        mode = { "n", "v" }, desc = "TreeWalker Up" },
+      { "\x02j", "<cmd>Treewalker Down<cr>",      mode = { "n", "v" }, desc = "TreeWalker Down" },
+
+      { "\x02h", "<cmd>Treewalker SwapLeft<cr>",  mode = { "n", "v" }, desc = "TreeWalker SwapLeft" },
+      { "\x02l", "<cmd>Treewalker SwapRight<cr>", mode = { "n", "v" }, desc = "TreeWalker SwapRight" },
+    },
+
+    -- The following options are the defaults.
+    -- Treewalker aims for sane defaults, so these are each individually optional,
+    -- and setup() does not need to be called, so the whole opts block is optional as well.
+    opts = {
+      -- Whether to briefly highlight the node after jumping to it
+      highlight = true,
+
+      -- How long should above highlight last (in ms)
+      highlight_duration = 250,
+
+      -- The color of the above highlight. Must be a valid vim highlight group.
+      -- (see :h highlight-group for options)
+      highlight_group = 'CursorLine',
+
+      -- Whether the plugin adds movements to the jumplist -- true | false | 'left'
+      --  true: All movements more than 1 line are added to the jumplist. This is the default,
+      --        and is meant to cover most use cases. It's modeled on how { and } natively add
+      --        to the jumplist.
+      --  false: Treewalker does not add to the jumplist at all
+      --  "left": Treewalker only adds :Treewalker Left to the jumplist. This is usually the most
+      --          likely one to be confusing, so it has its own mode.
+      jumplist = true,
+    }
+  },
+  {
+    {
+      "mrcjkb/rustaceanvim", -- add lsp plugin
+      version = "^5",
+      lazy = false,          -- This plugin is already lazy
+      opts = function(_, opts)
+        local astrolsp_avail, astrolsp = pcall(require, "astrolsp")
+        local astrolsp_opts = (astrolsp_avail and astrolsp.lsp_opts("rust_analyzer")) or {}
+        local server = {
+          ---@type table | (fun(project_root:string|nil, default_settings: table|nil):table) -- The rust-analyzer settings or a function that creates them.
+          settings = function(project_root, default_settings)
+            local astrolsp_settings = astrolsp_opts.settings or {}
+
+            local merge_table = require("astrocore").extend_tbl(default_settings or {}, astrolsp_settings)
+            local ra = require("rustaceanvim.config.server")
+            -- load_rust_analyzer_settings merges any found settings with the passed in default settings table and then returns that table
+            return ra.load_rust_analyzer_settings(project_root, {
+              settings_file_pattern = "rust-analyzer.json",
+              default_settings = merge_table,
+            })
+          end,
+        }
+        return { server = require("astrocore").extend_tbl(astrolsp_opts, server) }
+      end,
+      -- configure `rustaceanvim` by setting the `vim.g.rustaceanvim` variable
+      config = function(_, opts)
+        vim.g.rustaceanvim = require("astrocore").extend_tbl(opts, vim.g.rustaceanvim)
+      end,
+    },
+    {
+      "AstroNvim/astrolsp",
+      ---@type AstroLSPOpts
+      opts = {
+        handlers = { rust_analyzer = false }, -- Let rustaceanvim setup `rust_analyzer`
+      },
+    },
+    {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      opts = {
+        ensure_installed = { "rust-analyzer" }, -- automatically install lsp
+      },
+    },
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    -- For blink.cmp's completion
+    -- source
+    dependencies = {
+      "saghen/blink.cmp"
+    },
+    keys = {
+      { "<leader>m", "<cmd>Markview toggle<cr>", desc = "Toggle markview" }
+    },
+    opts = {
+      experimental = { check_rtp_message = false },
+    },
+    config = function(_, opts)
+      require("markview").setup(opts)
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MarkviewAttach",
+        callback = function(_)
+          vim.cmd("Markview enable")
+        end
+      })
+    end,
+  },
+  {
+    'ruifm/gitlinker.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require("gitlinker").setup()
+    end
+  },
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- check the installation instructions at
+      -- https://github.com/folke/snacks.nvim
+      "folke/snacks.nvim",
+    },
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      {
+        "<leader>yy",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        -- Open in the current working directory
+        "<leader>yw",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        "<leader>yl",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+  },
+  {
     "stevearc/overseer.nvim",
     enabled = false,
     cmd = {
