@@ -130,13 +130,6 @@ return {
     end,
   },
   {
-    'ruifm/gitlinker.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require("gitlinker").setup()
-    end
-  },
-  {
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
     dependencies = {
