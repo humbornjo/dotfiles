@@ -54,5 +54,12 @@ return {
         },
       })
     end,
+  },
+  {
+    "A7Lavinraj/fyler.nvim",
+    enabled = false,
+    dependencies = { "echasnovski/mini.icons" },
+    branch = "stable",
+    opts = {}
   }
 }
