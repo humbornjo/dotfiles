@@ -13,7 +13,7 @@ command_timeout = 2000
 [character]
 error_symbol = "[\uf054](bold red)"
 success_symbol = "[\uf054](bold green)"
-vicmd_symbol = "[\uf27d](yellow)" # 
+# vicmd_symbol = "[\uf27d](yellow)" # 
 
 [directory]
 style = "bold blue"
