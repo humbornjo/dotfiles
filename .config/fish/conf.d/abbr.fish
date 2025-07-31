@@ -13,6 +13,11 @@ abbr bl "brew leaves"
 abbr blr "brew leaves --installed-on-request"
 abbr blp "brew leaves --installed-as-dependency"
 abbr bs "brew search"
+abbr bu "brew update"
+abbr buu "brew upgrade"
+abbr bui "brew uninstall"
+abbr bnv "bun create vite MYAPP --template"
+abbr bna "bunx create-astro@latest MYAPP"
 
 abbr c clear
 abbr cat bat
