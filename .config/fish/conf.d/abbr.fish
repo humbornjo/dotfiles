@@ -33,6 +33,7 @@ abbr dps "docker ps --format 'table {{.Names}}\t{{.Status}}'"
 abbr e exit
 abbr ee "espanso edit"
 abbr er "espanso restart"
+abbr escli "docker run -p 5000:5000 elastichq/elasticsearch-hq"
 
 abbr fi "fisher install"
 abbr fr "fisher refresh"
