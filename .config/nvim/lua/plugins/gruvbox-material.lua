@@ -1,6 +1,7 @@
 return {
   "sainnhe/gruvbox-material",
   name = "gruvbox-material",
+  commit = "cf4709418b4066aee67d9c0bfaa1b0d631ce68a5",
   lazy = false,
   priority = 1500,
   config = function()
