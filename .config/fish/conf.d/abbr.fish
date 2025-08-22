@@ -131,6 +131,7 @@ abbr sai "SwitchAudioSource -t input -s (SwitchAudioSource -t input -a | fzf-tmu
 abbr sao "SwitchAudioSource -t output -s (SwitchAudioSource -t output -a | fzf-tmux -p --reverse)"
 abbr sf "source ~/.config/fish/config.fish && source ~/.config/fish/conf.d/*.fish"
 abbr st "tmux source ~/.config/tmux/tmux.conf"
+abbr convsingbox "docker run -d -p 8082:8080 ghcr.io/xmdhs/clash2sfa"
 
 abbr t "tmux"
 abbr ta "tmux a"
