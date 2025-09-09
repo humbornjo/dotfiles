@@ -40,6 +40,8 @@ brew install wakatime-cli
 brew install android-platform-tools     # adb & fastboot
 
 # docker family
+brew install helm
+brew install argocd
 brew install k3d
 brew install k9s
 brew install kubectx
