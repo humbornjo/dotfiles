@@ -9,6 +9,20 @@
                 },
                 "rules": [
                     {
+                        "description": "[HHKB]Control -> Esc + Ctrl",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[*]Caps_Lock -> Esc + Ctrl",
                         "manipulators": [
                             {
