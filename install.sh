@@ -59,6 +59,8 @@ brew install clementtsang/bottom/bottom
 
 # pl specific
 brew install uv
+brew install cmake
+brew install cmake-docs
 brew install llvm
 brew install zigup
 brew install rustup
