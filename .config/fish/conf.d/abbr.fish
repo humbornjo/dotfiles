@@ -93,6 +93,8 @@ abbr lt "eza -T"
 abbr ldk "lazydocker"
 abbr lg "lazygit"
 
+abbr mcpcli "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector"
+
 abbr nb "npm run build"
 abbr nd "npm run dev"
 abbr nf "fastfetch"
