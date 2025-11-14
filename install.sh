@@ -11,6 +11,7 @@ brew install tmux
 brew install sesh
 brew install yazi                       # terminal file manager
 brew install stow
+brew install watch
 brew install neovim
 brew install zoxide
 brew install mackup
