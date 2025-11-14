@@ -41,11 +41,26 @@ return {
     },
     config = function()
       local dap = require("dap")
-      dap.adapters.lldb = {
+
+      -- setup debuggers
+      dap.adapters["lldb"] = {
         type = "executable",
         command = "codelldb", -- adjust as needed, must be absolute path
         name = "lldb",
       }
+      dap.adapters["pwa-node"] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "node",
+          args = {
+            vim.fn.expand("$MASON/packages/js-debug-adapter") .. '/js-debug/src/dapDebugServer.js', "${port}",
+          },
+        },
+      }
+
+      -- setup configurations
       dap.configurations.go = nil
       dap.configurations.cpp = {
         {
@@ -60,6 +75,25 @@ return {
       }
       dap.configurations.c = dap.configurations.cpp
       dap.configurations.rust = dap.configurations.cpp
+      dap.configurations.javascript = {
+        {
+          type = "pwa-node",
+          request = "launch",
+          name = "Launch file",
+          program = "${file}",
+          cwd = "${workspaceFolder}",
+        },
+        {
+          type = "node",
+          request = "attach",
+          name = "Attach to process",
+          processId = require("dap.utils").pick_process,
+          cwd = vim.fn.getcwd(),
+          sourceMaps = true,
+          skipFiles = { "<node_internals>/**" },
+        },
+      }
+      dap.configurations.typescript = dap.configurations.javascript
     end,
   },
   {
@@ -92,6 +126,7 @@ return {
           path = "dlv",
           port = "${port}",
           host = "localhost",
+          args = { "--check-go-version=false" },
         },
       })
     end,
