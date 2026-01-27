@@ -92,6 +92,7 @@ abbr ll "eza -al"
 abbr lt "eza -T"
 abbr ldk "lazydocker"
 abbr lg "lazygit"
+abbr lsh "lazyssh"
 
 abbr mcpcli "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector"
 

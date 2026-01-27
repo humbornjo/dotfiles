@@ -30,6 +30,7 @@ brew install procs                      # sub for ps
 brew install ripgrep                    # sub for grep
 brew install tealdeer
 brew install fastfetch
+brew install Adembc/homebrew-tap/lazyssh
 
 brew install jq
 brew install yq
@@ -79,6 +80,10 @@ brew install lolcat
 # refer to :checkhealth snacks
 brew install gs                         # for pdf rendering
 brew install imagemagick                # for image rendering
+
+# sshfs support
+# https://github.com/macfuse/macfuse/wiki/File-Systems-%E2%80%90-SSHFS
+brew install --cask macfuse
 
 brew install --cask rar
 brew install --cask emacs

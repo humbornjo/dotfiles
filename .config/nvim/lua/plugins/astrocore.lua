@@ -66,6 +66,7 @@ return {
 				-- tables with just a `desc` key will be registered with which-key if it's installed
 				-- this is useful for naming menus
 				["<leader>b"] = { desc = "buffers", name = " Buffers" },
+				["<leader>m"] = { desc = "mount", name = "󰌘 Mount" },
 				["<leader>y"] = { desc = "yazi", name = "󰇥 Yazi" },
 				["<leader>r"] = { desc = "find and replace", name = " Find and Replace" },
 				["<leader>s"] = { desc = "snacks search", name = "󱥰 Snacks Search" },
