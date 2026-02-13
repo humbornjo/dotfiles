@@ -21,6 +21,7 @@ brew install wget
 brew install curl
 brew install tree
 brew install tokei
+brew install direnv
 brew install fd                         # sub for find
 brew install fzf
 brew install bat                        # sub for cat
