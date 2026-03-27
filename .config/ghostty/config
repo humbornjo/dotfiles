@@ -33,8 +33,13 @@ window-padding-balance = true
 window-save-state = always
 window-theme = auto
 window-decoration = false
-window-padding-x = 10
+window-padding-x = 11
 window-padding-y = 2
+
+quick-terminal-size = 80%, 50%
+quick-terminal-screen = mouse
+quick-terminal-position = center
+quick-terminal-space-behavior = move
 
 # visuals
 font-size = 16
@@ -42,7 +47,7 @@ font-family = "SFMono Nerd Font"
 cursor-text = "#000000"
 background-opacity = 0.985
 theme = "gruvbox-material-hard-dark"
-custom-shader = "./shaders/cursor_blaze.glsl"
+custom-shader = "./shaders/Synesthaxia.glsl"
 custom-shader-animation = true
 
 ###############
@@ -60,6 +65,9 @@ clipboard-trim-trailing-spaces = true
 # \x1b = Esc
 # \x02 = <C-b> (tmux prefix)
 macos-option-as-alt = "left"
+
+# toggle quick terminal
+keybind = cmd+grave_accent=toggle_quick_terminal
 
 # switch to window by index (1-based)
 keybind = super+physical:one=text:\x021
@@ -83,9 +91,9 @@ keybind = super+z=text:\x02z
 
 # [NVIM:JUMP]
 # jump backward
-keybind = super+left_bracket=text:\x0f
+keybind = super+[=text:\x0f
 # jump forward
-keybind = super+right_bracket=text:\x09
+keybind = super+]=text:\x09
 
 # [NVIM:PANEL] resize panel
 # bindkey "\e[1;3D" # ⌥←
