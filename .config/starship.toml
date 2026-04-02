@@ -10,44 +10,17 @@
 
 command_timeout = 2000
 
+format = """$username$hostname$directory$fill(grey) $time$line_break$character"""
+
 [character]
-error_symbol = "[\uf054](bold red)"
 success_symbol = "[\uf054](bold green)"
-# vicmd_symbol = "[\uf27d](yellow)" # 
+error_symbol = "[\uf054](bold red)"
 
-[directory]
-style = "bold blue"
-truncation_length = 3
+[fill]
+symbol = '─'
 
-[package]
-disabled = true
-
-[username]
-disabled = true
-
-[hostname]
-disabled = true
-
-[aws]
-disabled = true
-
-[gcloud]
-disabled = true
-
-[docker_context]
-disabled = true
-
-[git_branch]
-disabled = true
-
-[git_commit]
-disabled = true
-
-[git_state]
-disabled = true
-
-[git_metrics]
-disabled = true
-
-[git_status]
-disabled = true
+[time]
+disabled = false
+time_format = "%F %T"
+style = "#444444"
+format = '[$time]($style)'
