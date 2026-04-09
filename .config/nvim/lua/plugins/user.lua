@@ -7,7 +7,9 @@ return {
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
-		config = function() require("lsp_signature").setup() end,
+		config = function()
+			require("lsp_signature").setup()
+		end,
 	},
 
 	-- customize dashboard options
@@ -15,47 +17,279 @@ return {
 		"folke/snacks.nvim",
 		keys = {
 			-- Grep
-			{ "<leader>sb", function() Snacks.picker.lines() end,                 desc = "Buffer Lines" },
-			{ "<leader>sB", function() Snacks.picker.grep_buffers() end,          desc = "Grep Open Buffers" },
-			{ "<leader>sg", function() Snacks.picker.grep() end,                  desc = "Grep" },
-			{ "<leader>sw", function() Snacks.picker.grep_word() end,             desc = "Visual selection or word", mode = { "n", "x" } },
+			{
+				"<leader>sb",
+				function()
+					Snacks.picker.lines()
+				end,
+				desc = "Buffer Lines",
+			},
+			{
+				"<leader>sB",
+				function()
+					Snacks.picker.grep_buffers()
+				end,
+				desc = "Grep Open Buffers",
+			},
+			{
+				"<leader>sg",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Grep",
+			},
+			{
+				"<leader>sw",
+				function()
+					Snacks.picker.grep_word()
+				end,
+				desc = "Visual selection or word",
+				mode = { "n", "x" },
+			},
 			-- search
-			{ '<leader>s"', function() Snacks.picker.registers() end,             desc = "Registers" },
-			{ "<leader>s/", function() Snacks.picker.search_history() end,        desc = "Search History" },
-			{ "<leader>sa", function() Snacks.picker.autocmds() end,              desc = "Autocmds" },
-			{ "<leader>sb", function() Snacks.picker.lines() end,                 desc = "Buffer Lines" },
-			{ "<leader>sc", function() Snacks.picker.command_history() end,       desc = "Command History" },
-			{ "<leader>sC", function() Snacks.picker.commands() end,              desc = "Commands" },
-			{ "<leader>sd", function() Snacks.picker.diagnostics() end,           desc = "Diagnostics" },
-			{ "<leader>sD", function() Snacks.picker.diagnostics_buffer() end,    desc = "Buffer Diagnostics" },
-			{ "<leader>sh", function() Snacks.picker.help() end,                  desc = "Help Pages" },
-			{ "<leader>sH", function() Snacks.picker.highlights() end,            desc = "Highlights" },
-			{ "<leader>si", function() Snacks.picker.icons() end,                 desc = "Icons" },
-			{ "<leader>sj", function() Snacks.picker.jumps() end,                 desc = "Jumps" },
-			{ "<leader>sk", function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
-			{ "<leader>sl", function() Snacks.picker.loclist() end,               desc = "Location List" },
-			{ "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
-			{ "<leader>sM", function() Snacks.picker.man() end,                   desc = "Man Pages" },
-			{ "<leader>sp", function() Snacks.picker.lazy() end,                  desc = "Search for Plugin Spec" },
-			{ "<leader>sq", function() Snacks.picker.qflist() end,                desc = "Quickfix List" },
-			{ "<leader>sR", function() Snacks.picker.resume() end,                desc = "Resume" },
-			{ "<leader>su", function() Snacks.picker.undo() end,                  desc = "Undo History" },
+			{
+				'<leader>s"',
+				function()
+					Snacks.picker.registers()
+				end,
+				desc = "Registers",
+			},
+			{
+				"<leader>s/",
+				function()
+					Snacks.picker.search_history()
+				end,
+				desc = "Search History",
+			},
+			{
+				"<leader>sa",
+				function()
+					Snacks.picker.autocmds()
+				end,
+				desc = "Autocmds",
+			},
+			{
+				"<leader>sb",
+				function()
+					Snacks.picker.lines()
+				end,
+				desc = "Buffer Lines",
+			},
+			{
+				"<leader>sc",
+				function()
+					Snacks.picker.command_history()
+				end,
+				desc = "Command History",
+			},
+			{
+				"<leader>sC",
+				function()
+					Snacks.picker.commands()
+				end,
+				desc = "Commands",
+			},
+			{
+				"<leader>sd",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Diagnostics",
+			},
+			{
+				"<leader>sD",
+				function()
+					Snacks.picker.diagnostics_buffer()
+				end,
+				desc = "Buffer Diagnostics",
+			},
+			{
+				"<leader>sh",
+				function()
+					Snacks.picker.help()
+				end,
+				desc = "Help Pages",
+			},
+			{
+				"<leader>sH",
+				function()
+					Snacks.picker.highlights()
+				end,
+				desc = "Highlights",
+			},
+			{
+				"<leader>si",
+				function()
+					Snacks.picker.icons()
+				end,
+				desc = "Icons",
+			},
+			{
+				"<leader>sj",
+				function()
+					Snacks.picker.jumps()
+				end,
+				desc = "Jumps",
+			},
+			{
+				"<leader>sk",
+				function()
+					Snacks.picker.keymaps()
+				end,
+				desc = "Keymaps",
+			},
+			{
+				"<leader>sl",
+				function()
+					Snacks.picker.loclist()
+				end,
+				desc = "Location List",
+			},
+			{
+				"<leader>sm",
+				function()
+					Snacks.picker.marks()
+				end,
+				desc = "Marks",
+			},
+			{
+				"<leader>sM",
+				function()
+					Snacks.picker.man()
+				end,
+				desc = "Man Pages",
+			},
+			{
+				"<leader>sp",
+				function()
+					Snacks.picker.lazy()
+				end,
+				desc = "Search for Plugin Spec",
+			},
+			{
+				"<leader>sq",
+				function()
+					Snacks.picker.qflist()
+				end,
+				desc = "Quickfix List",
+			},
+			{
+				"<leader>sR",
+				function()
+					Snacks.picker.resume()
+				end,
+				desc = "Resume",
+			},
+			{
+				"<leader>su",
+				function()
+					Snacks.picker.undo()
+				end,
+				desc = "Undo History",
+			},
 			-- LSP
-			{ "ga",         function() vim.lsp.buf.code_action() end,             desc = "Goto Definition" },
-			{ "gd",         function() Snacks.picker.lsp_definitions() end,       desc = "Goto Definition" },
-			{ "gD",         function() Snacks.picker.lsp_declarations() end,      desc = "Goto Declaration" },
-			{ "gr",         function() Snacks.picker.lsp_references() end,        nowait = true,                     desc = "References" },
-			{ "gI",         function() Snacks.picker.lsp_implementations() end,   desc = "Goto Implementation" },
-			{ "gy",         function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
-			{ "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "LSP Symbols" },
-			{ "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+			{
+				"ga",
+				function()
+					vim.lsp.buf.code_action()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"gd",
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"gD",
+				function()
+					Snacks.picker.lsp_declarations()
+				end,
+				desc = "Goto Declaration",
+			},
+			{
+				"gr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"gI",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "Goto Implementation",
+			},
+			{
+				"gy",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Goto T[y]pe Definition",
+			},
+			{
+				"<leader>ss",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "LSP Symbols",
+			},
+			{
+				"<leader>sS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "LSP Workspace Symbols",
+			},
 			-- Others
-			{ "<leader>z",  function() Snacks.zen() end,                          desc = "Toggle Zen Mode" },
-			{ "<leader>Z",  function() Snacks.zen.zoom() end,                     desc = "Toggle Zoom" },
-			{ "<leader>gg", function() Snacks.lazygit() end,                      desc = "Lazygit" },
-			{ "<leader>rc", function() Snacks.rename.rename_file() end,           desc = "Rename File" },
-			{ "]]",         function() Snacks.words.jump(vim.v.count1) end,       desc = "Next Reference",           mode = { "n", "t" } },
-			{ "[[",         function() Snacks.words.jump(-vim.v.count1) end,      desc = "Prev Reference",           mode = { "n", "t" } },
+			{
+				"<leader>z",
+				function()
+					Snacks.zen()
+				end,
+				desc = "Toggle Zen Mode",
+			},
+			{
+				"<leader>Z",
+				function()
+					Snacks.zen.zoom()
+				end,
+				desc = "Toggle Zoom",
+			},
+			{
+				"<leader>gg",
+				function()
+					Snacks.lazygit()
+				end,
+				desc = "Lazygit",
+			},
+			{
+				"<leader>rc",
+				function()
+					Snacks.rename.rename_file()
+				end,
+				desc = "Rename File",
+			},
+			{
+				"]]",
+				function()
+					Snacks.words.jump(vim.v.count1)
+				end,
+				desc = "Next Reference",
+				mode = { "n", "t" },
+			},
+			{
+				"[[",
+				function()
+					Snacks.words.jump(-vim.v.count1)
+				end,
+				desc = "Prev Reference",
+				mode = { "n", "t" },
+			},
 		},
 		opts = {
 			dashboard = {
@@ -89,36 +323,16 @@ return {
 				-- you need to double quote it: `"\"test\""`
 				config = {
 					os = {
-						edit = 'if not set -q NVIM;' ..
-								'and nvim -- {{filename}};' ..
-								'else;' ..
-								'nvim --server $NVIM --remote-send "q";' ..
-								'and nvim --server $NVIM --remote-tab {{filename}};' ..
-								'end',
-						editAtLine = 'if not set -q NVIM;' ..
-								'and nvim +{{line}} -- {{filename}};' ..
-								'else;' ..
-								'nvim --server $NVIM --remote-send "q";' ..
-								'and nvim --server $NVIM --remote-tab {{filename}};' ..
-								'and nvim --server $NVIM --remote-send ":{{line}}<CR>";' ..
-								'end',
-						editAtLineAndWait = "nvim +{{line}} {{filename}}",
 						editInTerminal = true,
-						openDirInEditor = 'if not set -q NVIM;' ..
-								'and nvim -- {{dir}};' ..
-								'else;' ..
-								'nvim --server $NVIM --remote-send "q";' ..
-								'and nvim --server $NVIM --remote-tab {{dir}};' ..
-								'end'
 					},
 				},
-			}
+			},
 		},
 	},
 
 	-- You can disable default plugins as follows:
-	{ "AstroNvim/astrotheme",         enabled = false },
-	{ "s1n7ax/nvim-window-picker",    enabled = false },
+	{ "AstroNvim/astrotheme", enabled = false },
+	{ "s1n7ax/nvim-window-picker", enabled = false },
 	{ "max397574/better-escape.nvim", enabled = false },
 
 	-- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
@@ -141,24 +355,22 @@ return {
 			local npairs = require("nvim-autopairs")
 			local Rule = require("nvim-autopairs.rule")
 			local cond = require("nvim-autopairs.conds")
-			npairs.add_rules(
-				{
-					Rule("$", "$", { "tex", "latex" })
+			npairs.add_rules({
+				Rule("$", "$", { "tex", "latex" })
 					-- don't add a pair if the next character is %
-							:with_pair(cond.not_after_regex("%%"))
+					:with_pair(cond.not_after_regex("%%"))
 					-- don't add a pair if  the previous character is xxx
-							:with_pair(cond.not_before_regex("xxx", 3))
+					:with_pair(cond.not_before_regex("xxx", 3))
 					-- don't move right when repeat character
-							:with_move(cond.none())
+					:with_move(cond.none())
 					-- don't delete if the next character is xx
-							:with_del(cond.not_after_regex("xx"))
+					:with_del(cond.not_after_regex("xx"))
 					-- disable adding a newline when you press <cr>
-							:with_cr(cond.none()),
-					-- disable for .vim files, but it work for another filetypes
-					-- Rule("a", "a", "-vim")
-				}
-			)
-			npairs.get_rules("'")[1].not_filetypes = { 'clojure', 'scheme', 'lisp' }
+					:with_cr(cond.none()),
+				-- disable for .vim files, but it work for another filetypes
+				-- Rule("a", "a", "-vim")
+			})
+			npairs.get_rules("'")[1].not_filetypes = { "clojure", "scheme", "lisp" }
 		end,
 	},
 }
