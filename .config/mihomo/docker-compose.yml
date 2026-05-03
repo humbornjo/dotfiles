@@ -1,0 +1,16 @@
+services:
+  mihomo:
+    container_name: mihomo
+    image: metacubex/mihomo
+    restart: always
+    network_mode: bridge
+    cap_add:
+      - ALL
+    volumes:
+      - ./ui:/ui
+      - ./config.yaml:/root/.config/mihomo/config.yaml
+    ports:
+      - "7890:7890" # http
+      - "7891:7891" # socks
+      - "7892:7892" # mixed
+      - "9090:9090" # external
