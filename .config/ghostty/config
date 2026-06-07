@@ -36,7 +36,7 @@ window-decoration = false
 window-padding-x = 11
 window-padding-y = 2
 
-quick-terminal-size = 80%, 50%
+quick-terminal-size = 80%, 60%
 quick-terminal-screen = mouse
 quick-terminal-position = center
 quick-terminal-space-behavior = move
@@ -67,7 +67,7 @@ clipboard-trim-trailing-spaces = true
 macos-option-as-alt = "left"
 
 # toggle quick terminal
-keybind = cmd+grave_accent=toggle_quick_terminal
+keybind = cmd+enter=toggle_quick_terminal
 
 # switch to window by index (1-based)
 keybind = super+physical:one=text:\x021
