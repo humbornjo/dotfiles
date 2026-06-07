@@ -95,7 +95,11 @@ if.app-id = 'net.kovidgoyal.kitty'
 run = 'layout tiling'
 
 [[on-window-detected]]
-if.app-id = 'com.vivaldi.Vivaldi'
+if.app-id = 'com.google.Chrome'
+run = 'layout tiling'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.code'
 run = 'layout tiling'
 
 [[on-window-detected]]
