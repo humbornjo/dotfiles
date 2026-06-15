@@ -45,12 +45,18 @@ brew install android-platform-tools     # adb & fastboot
 # docker family
 brew install helm
 brew install argocd
+brew install dive
 brew install k3d
-brew install k9s
+brew install stern
 brew install kubectx
-brew install kubectl-ai
 brew install lazydocker
 brew install kubernetes-cli
+brew install janosmiko/tap/lfk
+brew install derailed/popeye/popeye
+brew install --cask freelens
+# https://krew.sigs.k8s.io/ install krew for kubectl plugins
+# kubectl krew install tree
+# kubectl krew install resource-capacity
 
 # git family
 brew install gh
