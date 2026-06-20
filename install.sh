@@ -38,7 +38,6 @@ brew install yq
 brew install libpq                      # postgresql tools
 brew install pgcli
 brew install yozefu                     # kafka consumer client
-brew install gemini-cli
 brew install wakatime-cli
 brew install android-platform-tools     # adb & fastboot
 
@@ -49,6 +48,7 @@ brew install dive
 brew install k3d
 brew install stern
 brew install kubectx
+brew install kustomize
 brew install lazydocker
 brew install kubernetes-cli
 brew install janosmiko/tap/lfk
@@ -100,7 +100,6 @@ brew install --cask alfred
 brew install --cask ghostty
 brew install --cask spotify
 brew install --cask postman
-brew install --cask vivaldi             # browser in chromium
 brew install --cask zen                 # browser in firefox
 brew install --cask firefox             # you should install it anyhow
 brew install --cask obsidian
