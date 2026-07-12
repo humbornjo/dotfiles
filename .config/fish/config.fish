@@ -26,7 +26,9 @@ set -Ux PAGER "less"
 set -Ux EZA_CONFIG_DIR "$HOME/.config/eza"
 set -Ux BAT_CONFIG_PATH "$HOME/.config/bat/config" # 'sharkdp/bat' cat clone
 set -Ux FZF_DEFAULT_COMMAND "fd -H -E '.git'"
-set -Ux KUBECONFIG "$HOME/.kube/config"
+
+set -Ux PATH $PATH $HOME/.krew/bin
+set -Ux KUBECONFIG "$HOME/.kube/config:$HOME/.kube/config-ms:$HOME/.kube/config-ms-prod"
 
 # golang
 set -Ux GOPATH "$HOME/Library/go"
@@ -58,3 +60,6 @@ set -gx PATH $HOME/.cabal/bin $PATH /Users/humborn/.ghcup/bin
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# kimi-code
+fish_add_path -g "/Users/moonshot/.kimi-code/bin"
