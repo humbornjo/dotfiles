@@ -94,6 +94,79 @@ return {
         },
       }
       dap.configurations.typescript = dap.configurations.javascript
+
+      local function dap_launch_config(filetype)
+        local configurations = {
+          python = {
+            name = "Debug current file",
+            type = "python",
+            request = "launch",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+            args = {},
+            console = "integratedTerminal",
+            justMyCode = false,
+          },
+          c = {
+            name = "Debug current program",
+            type = "lldb",
+            request = "launch",
+            program = "${fileDirname}/${fileBasenameNoExtension}",
+            cwd = "${workspaceFolder}",
+            args = {},
+            stopOnEntry = false,
+          },
+          go = {
+            name = "Debug current package",
+            type = "go",
+            request = "launch",
+            mode = "debug",
+            program = "${fileDirname}",
+            cwd = "${workspaceFolder}",
+            args = {},
+          },
+        }
+        configurations.cpp = configurations.c
+
+        local configuration = configurations[filetype]
+        if not configuration then return nil end
+
+        return {
+          ["$schema"] = "https://raw.githubusercontent.com/mfussenegger/dapconfig-schema/master/dapconfig-schema.json",
+          version = "0.2.0",
+          configurations = { configuration },
+        }
+      end
+
+      vim.api.nvim_create_user_command("DapInit", function(opts)
+        local root = vim.fs.root(0, { ".git", "pyproject.toml", "go.mod", "CMakeLists.txt", "Makefile" })
+          or vim.fn.getcwd()
+        local directory = root .. "/.vscode"
+        local path = directory .. "/launch.json"
+
+        if vim.uv.fs_stat(path) and not opts.bang then
+          vim.cmd.tabedit(vim.fn.fnameescape(path))
+          return
+        end
+
+        local filetype = vim.bo.filetype
+        local config = dap_launch_config(filetype)
+        if not config then
+          vim.notify("DapInit does not support filetype: " .. (filetype ~= "" and filetype or "unknown"), vim.log.levels.ERROR)
+          return
+        end
+
+        vim.fn.mkdir(directory, "p")
+        local json = vim.json.encode(config, { indent = "  " })
+        vim.fn.writefile(vim.split(json, "\n", { plain = true }), path)
+        vim.cmd.tabedit(vim.fn.fnameescape(path))
+        vim.notify("Generated " .. path .. " for " .. filetype)
+      end, {
+        bang = true,
+        desc = "Generate a project DAP launch.json for the current filetype",
+      })
+
+      vim.keymap.set("n", "<Leader>dI", "<Cmd>DapInit<CR>", { desc = "Initialize DAP config" })
     end,
   },
   {
