@@ -37,6 +37,13 @@ brew install jq
 brew install yq
 brew install libpq                      # postgresql tools
 brew install pgcli
+brew install logcli
+brew install grpcui
+brew install graphviz
+brew install ffmpeg
+brew install redis
+brew install cosign
+brew install tree-sitter-cli
 brew install yozefu                     # kafka consumer client
 brew install wakatime-cli
 brew install android-platform-tools     # adb & fastboot
@@ -61,6 +68,9 @@ brew install --cask freelens
 # git family
 brew install gh
 brew install git
+brew install git-who
+brew install git-lfs
+brew install git-filter-repo
 brew install lazygit
 brew install git-delta
 brew install arl/arl/gitmux
@@ -100,6 +110,7 @@ brew install --cask alfred
 brew install --cask ghostty
 brew install --cask spotify
 brew install --cask postman
+brew install --cask yaak
 brew install --cask zen                 # browser in firefox
 brew install --cask firefox             # you should install it anyhow
 brew install --cask obsidian
@@ -112,6 +123,12 @@ brew install --cask karabiner-elements
 brew install --cask espanso/espanso/espanso
 brew install --cask nikitabobko/tap/aerospace
 
+# stow all configs under .config except nvim
+rm -rf ~/.config/fish && stow -t ~/.config -d .config/ .
+
+# stow all configs under ~
+stow -t ~ .
+
 # AstroNvim
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
@@ -120,6 +137,9 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
+
+# stow nvim
+rm -rf ~/.config/nvim/init.lua ~/.config/nvim/lua && stow -t ~/.config/nvim -d ./.config/nvim .
 
 # tpm
 # PS: follow the official tutorial to init
