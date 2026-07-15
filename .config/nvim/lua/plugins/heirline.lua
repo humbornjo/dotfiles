@@ -65,12 +65,13 @@ return {
 				end,
 				init = function(self)
 					local ok, search = pcall(vim.fn.searchcount)
-					if ok and search.total then
-						self.search = search
-					end
+					self.search = ok and search or nil
 				end,
 				provider = function(self)
 					local search = self.search
+					if not search or not search.current or not search.total or not search.maxcount then
+						return ""
+					end
 					return string.format(" [%d/%d]  ", search.current, math.min(search.total, search.maxcount))
 				end,
 			},

@@ -144,7 +144,7 @@ rm -rf ~/.config/nvim/init.lua ~/.config/nvim/lua && stow -t ~/.config/nvim -d .
 # tpm
 # PS: follow the official tutorial to init
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source ~/.tmux.conf
+tmux source ~/.config/tmux/tmux.conf
 
 fish
 # fisher
