@@ -63,3 +63,6 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # kimi-code
 fish_add_path -g "/Users/moonshot/.kimi-code/bin"
+
+# kimi-code
+fish_add_path -g "/Users/user/.kimi-code/bin"

@@ -7,3 +7,5 @@
 	process = git-lfs filter-process
 [rerere]
 	enabled = true
+[push]
+	default = upstream

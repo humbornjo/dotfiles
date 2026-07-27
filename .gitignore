@@ -65,7 +65,7 @@ run
 .config/fish/conf.d/secret.fish
 .config/fish/conf.d/moonshot.fish
 .config/fish/temp
-.config/git/config
+.config/git/gitlab
 .config/tmux/plugins/
 .config/fish/fish_variables
 .config/karabiner/*

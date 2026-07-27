@@ -18,7 +18,7 @@
     diffFilter = delta ;--color-only
 
 [delta]
-    syntax-theme = Catppuccin-mocha
+    syntax-theme = gruvbox-dark
     line-numbers = true
     plus-style = syntax omit
     minus-style = syntax omit
@@ -51,3 +51,12 @@
 [user]
 	name = humbornjo
 	email = humbornjo@gmail.com
+
+[includeIf "hasconfig:remote.*.url:git@dev.msh.team:*/**"]
+	path = ~/.config/git/gitlab
+
+[includeIf "hasconfig:remote.*.url:ssh://git@dev.msh.team/**"]
+	path = ~/.config/git/gitlab
+
+[includeIf "hasconfig:remote.*.url:https://dev.msh.team/**"]
+	path = ~/.config/git/gitlab
