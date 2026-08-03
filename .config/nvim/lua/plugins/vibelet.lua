@@ -25,11 +25,18 @@ return {
   },
   {
     "Exafunction/windsurf.vim",
+    init = function()
+      vim.g.codeium_no_map_tab = true
+      -- The ARM server crashes in go-m1cpu on current macOS. Let Windsurf
+      -- manage its own server version, but use its x86_64 build via Rosetta.
+      local uname = vim.uv.os_uname()
+      if uname.sysname == "Darwin" and uname.machine == "arm64" then
+        vim.g.codeium_os = uname.sysname
+        vim.g.codeium_arch = "x86_64"
+      end
+    end,
     config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.g.codeium_no_map_tab = true
-      vim.g.codeium_os = 'Darwin'
-      vim.g.codeium_arch = 'arm64'
       vim.keymap.set("i", "<M-y>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
       vim.keymap.set("i", "<M-u>", function() return vim.fn["codeium#AcceptNextLine"]() end,
         { expr = true, silent = true })
