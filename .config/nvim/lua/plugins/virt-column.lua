@@ -16,7 +16,7 @@ return {
   },
   opts = {
     enabled = false,
-    virtcolumn = "+1,70",
+    virtcolumn = "+1,75",
   },
   config = function(_, opts)
     vim.g.virt_column_enabled = false
