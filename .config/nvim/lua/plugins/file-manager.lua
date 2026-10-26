@@ -1,6 +1,10 @@
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		-- 3.42.0 can render into a stale tab and create a duplicate buffer name (E95).
+		-- Pin to the upstream fix until the next release includes it.
+		version = false,
+		commit = "162f9b953a692b559afe43e38d60afee81e8e79b",
 		config = function(_, opts)
 			opts.source_selector = {
 				winbar = false,

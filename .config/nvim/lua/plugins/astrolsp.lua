@@ -7,6 +7,54 @@
 return {
 	"AstroNvim/astrolsp",
 	dependencies = { "williamboman/mason.nvim" },
+	init = function()
+		if vim.g.clwrap_format_wrapped then return end
+		vim.g.clwrap_format_wrapped = true
+		local filetypes = {
+			go = "go",
+			typescript = "typescript",
+			typescriptreact = "tsx",
+			rust = "rust",
+			zig = "zig",
+		}
+		local extensions = {
+			go = "go",
+			ts = "typescript",
+			mts = "typescript",
+			cts = "typescript",
+			tsx = "tsx",
+			rs = "rust",
+			zig = "zig",
+		}
+
+		-- AstroNvim's manual and save formatting both call vim.lsp.buf.format.
+		local lsp_format = vim.lsp.buf.format
+		vim.lsp.buf.format = function(opts)
+			local result = lsp_format(opts)
+			local bufnr = opts and opts.bufnr or vim.api.nvim_get_current_buf()
+			if bufnr == 0 then bufnr = vim.api.nvim_get_current_buf() end
+			if not vim.api.nvim_buf_is_valid(bufnr) then return result end
+
+			local extension = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":e"):lower()
+			local language = extensions[extension] or filetypes[vim.bo[bufnr].filetype]
+			local clwrap = vim.fn.exepath("clwrap")
+			if not language or clwrap == "" then return result end
+
+			local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+			local input = table.concat(lines, "\n") .. (vim.bo[bufnr].endofline and "\n" or "")
+			local output = vim.system({ clwrap, "--lang", language, "-" }, { stdin = input, text = true }):wait()
+			if output.code ~= 0 or type(output.stdout) ~= "string" or output.stdout == input then return result end
+
+			local view = bufnr == vim.api.nvim_get_current_buf() and vim.fn.winsaveview() or nil
+			local text = output.stdout
+			local endofline = text:sub(-1) == "\n"
+			if endofline then text = text:sub(1, -2) end
+			vim.bo[bufnr].endofline = endofline
+			vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, vim.split(text, "\n", { plain = true }))
+			if view then vim.fn.winrestview(view) end
+			return result
+		end
+	end,
 	---@type AstroLSPOpts
 	opts = {
 		-- Configuration table of features provided by AstroLSP
