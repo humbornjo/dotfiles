@@ -66,6 +66,7 @@ run
 .config/fish/conf.d/secrets.fish
 .config/fish/conf.d/moonshot.fish
 .config/fish/temp
+.config/shell/env.local.sh
 .config/git/gitlab
 .config/tmux/plugins/
 .config/fish/fish_variables
