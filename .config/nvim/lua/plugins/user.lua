@@ -2,6 +2,38 @@
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
+local function toggle_zoom()
+	local restore = vim.t.vellum_zoom_restore
+	if restore then
+		vim.t.vellum_zoom_restore = nil
+		vim.cmd(restore)
+		require("vellum").redraw()
+		return
+	end
+
+	-- Vellum renders for its real window width, so maximize the split instead of opening a float.
+	if vim.api.nvim_buf_get_name(0) == "vellum://preview" then
+		vim.t.vellum_zoom_restore = vim.fn.winrestcmd()
+		vim.cmd("wincmd _")
+		vim.cmd("wincmd |")
+		require("vellum").redraw()
+		return
+	end
+
+	require("snacks.zen").zoom()
+end
+
+local function copy_git_permalink()
+	require("snacks.gitbrowse").open({
+		what = "permalink",
+		notify = false,
+		open = function(url)
+			vim.fn.setreg("+", url)
+			vim.notify("Copied git permalink:\n" .. url)
+		end,
+	})
+end
+
 ---@type LazySpec
 return {
 	{
@@ -255,9 +287,12 @@ return {
 			},
 			{
 				"<leader>Z",
-				function()
-					Snacks.zen.zoom()
-				end,
+				toggle_zoom,
+				desc = "Toggle Zoom",
+			},
+			{
+				"<C-b>z",
+				toggle_zoom,
 				desc = "Toggle Zoom",
 			},
 			{
@@ -266,6 +301,12 @@ return {
 					Snacks.lazygit()
 				end,
 				desc = "Lazygit",
+			},
+			{
+				"<leader>gy",
+				copy_git_permalink,
+				mode = { "n", "x" },
+				desc = "Copy Git Permalink",
 			},
 			{
 				"<leader>rc",
@@ -292,6 +333,9 @@ return {
 			},
 		},
 		opts = {
+			bigfile = {
+				size = 5 * 1024 * 1024,
+			},
 			dashboard = {
 				preset = {
 					header = table.concat({
@@ -312,6 +356,16 @@ return {
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
 					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
 					{ section = "startup" },
+				},
+			},
+			gitbrowse = {
+				url_patterns = {
+					["dev%.msh%.team"] = {
+						branch = "/-/tree/{branch}",
+						file = "/-/blob/{branch}/{file}#L{line_start}-{line_end}",
+						permalink = "/-/blob/{commit}/{file}#L{line_start}-{line_end}",
+						commit = "/-/commit/{commit}",
+					},
 				},
 			},
 			lazygit = {
