@@ -28,7 +28,7 @@ function mihomo-roll
     end
 
     # Install the new config.
-    if not sudo install -m 600 "$tmp" /etc/mihomo/config.yaml
+    if not sudo install -o (id -un) -g wheel -m 600 "$tmp" /etc/mihomo/config.yaml
         rm -f "$tmp"
         return 1
     end
